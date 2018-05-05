@@ -1,8 +1,6 @@
 <?php
 
-$details = R::find('about', 1);
-$aboutName = $details[1]['name'];
-$aboutDescription = $details[1]['description'];
+$blogPosts = ['post1', 'post2', 'post3', 'post4', 'post5'];
 
 // готовим контент для центральной части
 ob_start();

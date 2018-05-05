@@ -7,13 +7,9 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-6 col-xl-4">
-          <div class="card card-post">
-            <img class="card__img card-post__img" src="/img/card_post.jpg" />
-            <h2 class="card__title">Поездка в New York пример длинного названия поста ...</h2>
-            <a class="button button-regular" href="#"> Читать </a>
-          </div>
-        </div>
+        <?php foreach ($blogPosts as $post) {
+    include "blog-card.tpl";
+}?>
       </div>
     </div>
   </div>
