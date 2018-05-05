@@ -1,6 +1,7 @@
 <?php
 
 require "config.php";
+require "db.php";
 
 /* --------- РОУТЕР ----------- */
 $uri = $_SERVER['REQUEST_URI'];
