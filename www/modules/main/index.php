@@ -4,9 +4,6 @@ $details = R::find('about', 1);
 $aboutName = $details[1]['name'];
 $aboutDescription = $details[1]['description'];
 
-$title = "Главная";
-$content = "Main page content";
-
 // готовим контент для центральной части
 ob_start();
 include ROOT . "templates/main/main.tpl";
