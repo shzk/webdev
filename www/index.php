@@ -1,10 +1,6 @@
 <?php
-require "config.php";
-echo HOST . '<br>';
-echo ROOT . '<br>';
 
-echo "index.php <br>";
-// echo $_SERVER['REQUEST_URI'] . '<br>';
+require "config.php";
 
 /* --------- РОУТЕР ----------- */
 $uri = $_SERVER['REQUEST_URI'];
@@ -15,7 +11,6 @@ $uri = explode('?', $uri);
 echo $uri[0] . '<br>';
 switch ($uri[0]) {
     case '':
-        // echo "main page";
         include "modules/main/index.php";
         break;
     case 'about':
@@ -31,6 +26,3 @@ switch ($uri[0]) {
         echo "404 and main page";
         break;
 }
-
-// print_r($uri);
-// echo $uri;
