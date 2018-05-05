@@ -9,10 +9,16 @@ $uri = rtrim($uri, "/");
 $uri = filter_var($uri, FILTER_SANITIZE_URL);
 $uri = substr($uri, 1);
 $uri = explode('?', $uri);
-echo $uri[0] . '<br>';
+
 switch ($uri[0]) {
     case '':
         include "modules/main/index.php";
+        break;
+    case 'login':
+        include "modules/login/login.php";
+        break;
+    case 'registration':
+        include "modules/login/registration.php";
         break;
     case 'about':
         include "modules/about/index.php";
