@@ -15,3 +15,7 @@
     <div class="login-page__form-container">
 <?=$content?>
 </div>
+<div class="login-page__footer">
+      <p class="footer-copy">© Денис Токарев<br/>	Создано с <i class="fas fa-heart"> </i> в <a class="footer-link" href="http://webcademy.ru/" target="_blank">WebCademy.ru</a> в 2018 году</p>
+    </div>
+  </div>

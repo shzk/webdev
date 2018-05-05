@@ -1,5 +1,4 @@
-<aside>
-    <h2>Sidebar</h2>
-</aside>
+<body class="Home-page">
+    <?php echo $content; ?>
 
-<?php echo $content; ?>
+</body>
