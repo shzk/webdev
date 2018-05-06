@@ -38,6 +38,9 @@ if (isset($_POST['register'])) {
     $user->email = htmlentities($_POST['email']);
     $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     R::store($user);
+
+    header('Location: ' . HOST . 'profile-edit');
+    exit();
   }
 }
 
