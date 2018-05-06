@@ -35,7 +35,7 @@
               <use xlink:href="/img/sprite.svg#plane"></use>
             </svg></a></div><a class="header-user__brand" href="index.html">
           <div class="header-user__brandname">
-            <h1>Digital Lyfestyle</h1>
+            <h1>Digital Lifestyle</h1>
           </div>
           <div class="header-user__brand-desc">
             <p>Сайт IT специалиста</p>

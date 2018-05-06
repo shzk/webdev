@@ -29,6 +29,9 @@ switch ($uri[0]) {
     case 'blog':
         include "modules/blog/index.php";
         break;
+    case 'blog/post':
+        include "modules/blog/post.php";
+        break;
     default:
         echo "404 and main page";
         break;
