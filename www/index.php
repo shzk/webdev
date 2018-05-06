@@ -2,6 +2,7 @@
 
 require "config.php";
 require "db.php";
+session_start();
 
 /* --------- РОУТЕР ----------- */
 $uri = $_SERVER['REQUEST_URI'];
@@ -31,7 +32,7 @@ switch ($uri[0]) {
     case 'profile-edit':
         include "modules/profile/edit.php";
         break;
-        
+
     case 'about':
         include "modules/about/index.php";
         break;

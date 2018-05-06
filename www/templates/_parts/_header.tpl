@@ -13,9 +13,12 @@
       </ul>
     </nav>
     <div class="admin-login"><i class="fas fa-sign-out-alt"></i><a href="#">Выход</a></div>
-  </div>
+  </div> <!-- /nav-admin -->
+
   <div class="header-user">
+
     <div class="header-user__content">
+
       <div class="header-user__mobile-bar" id="navigation-toggle">
         <div class="header-user__mobile-toggle">
           <svg class="icon icon-nav nav-mod">
@@ -28,7 +31,8 @@
           </svg>
         </div>
         <p>Открыть навигацию</p>
-      </div>
+      </div> <!-- /header-user__mobile-bar -->
+
       <div class="header-user__logo-brand">
         <div class="header-user__logo"><a href="<?=HOST?>">
             <svg class="icon icon-plane plane-mod">
@@ -40,7 +44,20 @@
           <div class="header-user__brand-desc">
             <p>Сайт IT специалиста</p>
           </div></a>
-      </div>
+      </div> <!-- /header-user__logo-brand -->
+
+      <?php 
+        if (isset($_SESSION['logged_user']) && $_SESSION['login'] == "1") {
+          if ($_SESSION['role'] == 'admin') {
+            echo "admin logged in";
+          } else {
+            include ROOT . "templates/_parts/_user-header.tpl";
+          }
+        } else {
+          echo "no user";
+        }
+      ?>
+
       <div class="header-user__nav-box" id="navigation-menu">
         <div class="menu-admin">
           <div class="tab-profile">
@@ -76,6 +93,8 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
+      </div> <!-- /header-user__nav-box -->
+
+    </div> <!-- /header-user__content -->
+
+  </div> <!-- /header-user -->
