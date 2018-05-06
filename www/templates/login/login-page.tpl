@@ -2,15 +2,21 @@
   <div class="login-page__container">
     <div class="login-page__header">
       <div class="header-user__logo-brand">
-        <div class="header-user__logo"><a href="index.html">
+        <div class="header-user__logo"><a href="<?=HOST?>">
             <svg class="icon icon-plane plane-mod">
-              <use xlink:href="/img/sprite.svg#plane"></use>
-            </svg></a></div><a class="header-user__brand" href="index.html">
+              <use xlink:href="<?=HOST?>templates/assets/img/sprite.svg#plane"></use>
+            </svg></a></div><a class="header-user__brand" href="<?=HOST?>">
           <div class="header-user__brandname">
             <h1>Digital Lifestyle</h1>
           </div></a>
       </div>
-      <div class="header-user__right-link"><a href="/sign-up.html">Регистрация</a></div>
+      <?php if ($uri[0] == 'registration') { ?>
+        <div class="header-user__right-link"><a href="login">Войти</a></div>
+      <?php } else { ?>
+        <div class="header-user__right-link"><a href="registration">Регистрация</a></div>
+      <?php } ?>
+      
+      
     </div>
     <div class="login-page__form-container">
 <?=$content?>
