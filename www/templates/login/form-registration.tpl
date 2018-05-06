@@ -1,19 +1,28 @@
-<form class="form-container" action="/sign-up.html" id="form-validate">
+<form class="form-container" action="registration" id="form-validate" method="POST">
         <div class="form-title">Регистрация</div>
-        <div class="error-massages" id="error-massages">
-          <div class="error-message error-message__email">Введите email</div>
-          <div class="error-message error-message__password">Введите пароль</div>
-          <div class="block-error block-error__booked">
-            <div class="error-message error-message__booked">Данный email уже занят.</div>
-            <div class="description-error">
-              <p>Используйте другой email чтобы создать новый аккаунт.</p>
-              <p>Или воспользуйтесь <a href="#">восстановлением пароля</a>, чтобы войти на сайт.</p>
-            </div>
-          </div>
-        </div>
+
+        <?php
+          if (isset($errors)) {
+            foreach ($errors as $error) {
+              if (count($error) == 1) {?>
+              <div class="error-message error-message__email"><?=$error['title']?></div>
+            <?php } else if (count($error) == 2) {?>
+              <div class="block-error block-error__booked">
+                <div class="error-message error-message__booked"><?=$error['title']?></div>
+                <div class="description-error">
+                  <p><?=$error['desc']?></p>
+                </div>
+              </div>
+            <?php }
+            }
+          }
+        ?>
+        
         <div class="form-fields" id="form-fields">
-          <input class="form-full-width" type="text" name="email" placeholder="E-mail"/>
-          <input class="form-full-width" type="text" name="password" placeholder="Пароль"/>
+          <input class="form-full-width" type="text" name="email" placeholder="E-mail" value="den4@icloud.com"/>
+          <input class="form-full-width" type="password" name="password" placeholder="Пароль" value="123456"/>
         </div>
-        <div class="additional-info"></div><a class="button button-login" href="#"> Регистрация </a>
+        <div class="additional-info"></div>
+        <input class="button button-login" name="register" type="submit" value="Регистрация">
+        <!-- <a class="button button-login" href="#"> Регистрация </a> -->
       </form>
