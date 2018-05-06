@@ -1,16 +1,29 @@
 <div class="full-post">
     <div class="container">
-      <div class="row">
-        <div class="col"></div>
-        <div class="col-10">
-          <h1>Редактировать профиль</h1>
-          <form action="<?=HOST?>profile-edit" method="POST">
-          <?php require ROOT."/templates/_parts/_errors.tpl"?> 
-            <section class="add-post">
-              <div class="add-post__title">Имя</div>
-              <input class="form-full-width" type="text" name="name" value="<?=$currentUser->name?>"/>
-            </section>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-10">
+                <h1>Профиль</h1>
+                <section class="add-post">
+                    <div class="add-post__title">Имя, Фамилия</div>
+                    <div><?=$currentUser->name?> <?=$currentUser->secondname?></div>
+                </section>
 
+                <section class="add-post">
+                    <div class="add-post__title">Email</div>
+                    <div><?=$currentUser->email?></div>
+                </section>
+
+                <section class="add-post">
+                    <div class="add-post__title">Страна, Город</div>
+                    <div><?=$currentUser->country?>, <?=$currentUser->city?></div>
+                </section>
+
+                <section class="add-post">
+                  <a class="button button-regular" href="<?=HOST?>profile-edit">Редактировать<a/>
+                </section>
+
+                <!-- 
             <section class="add-post">
               <div class="add-post__title">Фамилия</div>
               <input class="form-full-width" type="text" name="secondname" value="<?=$currentUser->secondname?>"/>
@@ -47,16 +60,11 @@
 
             <section class="add-post">
               <input class="button button-save" type="submit" name="profile-update" value="Сохранить"/>
-              <a class="button button-delete" href="<?=HOST?>profile">Отмена</a>
-            </section>
+              <a class="button button-delete" href="/">Отмена</a>
+            </section> -->
 
-          </form>
-          <!-- <section class="add-post">
-            <div class="add-post__title">Информация на главной</div>
-            <textarea class="form-message" name="userInfo" placeholder="Информация на главной">Я веб разработчик из Казани. Мне 28 лет. &lt;br&gt;Занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.</textarea>
-          </section> -->
+            </div>
+            <div class="col"></div>
         </div>
-        <div class="col"></div>
-      </div>
     </div>
-  </div>
+</div>

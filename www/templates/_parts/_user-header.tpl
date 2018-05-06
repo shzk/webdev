@@ -5,12 +5,12 @@
     </div>
     <div class="header-user__inner-content-box">
       <div class="header-user__inner-name-desc">
-        <h2>Емельян Казаков</h2>
+        <h2><?=$currentUser->name?> <?=$currentUser->secondname?></h2>
         <p>Пользователь</p>
       </div>
       <div class="header-user__inner-buttons-box">
         <div class="header-user__inner-profile">
-          <form><a class="button button-header-user__inner-btn" href="#"> Профиль </a>
+          <form><a class="button button-header-user__inner-btn" href="<?=HOST?>profile"> Профиль </a>
           </form>
         </div>
         <div class="header-user__inner-quit">

@@ -1,7 +1,7 @@
 <div class="nav-admin">
     <div class="avatar avatar-small"><img src="<?=HOST?>templates/assets/img/avatar-img/photo-small.jpg" alt=""/></div>
     <div class="admin-profile">
-      <div class="admin-profile__name">Юрий Ключевский</div><a class="btn btn--admin" href="#">Администратор</a>
+      <div class="admin-profile__name"><?=$currentUser->name?> <?=$currentUser->secondname?></div><a class="btn btn--admin" href="#">Администратор</a>
     </div>
     <nav>
       <ul class="admin-menu">

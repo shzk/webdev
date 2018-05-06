@@ -5,7 +5,7 @@
 // echo "</pre>";
 
 //получаем данные пользователя
-$currentUser = $_SESSION['logged_user'];
+// $currentUser = $_SESSION['logged_user'];
 $user = R::load('users', $currentUser->id);
 
 // Если форма отправлена - редактируем данные пользователя

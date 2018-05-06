@@ -3,6 +3,7 @@
 require "config.php";
 require "db.php";
 session_start();
+$currentUser = $_SESSION['logged_user'];
 
 /* --------- РОУТЕР ----------- */
 $uri = $_SERVER['REQUEST_URI'];
