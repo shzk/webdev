@@ -22,7 +22,7 @@ if (isset($_POST['register'])) {
     $user->email = htmlentities($_POST['email']);
     $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     R::store($user);
-    $user = R::findOne('users', 'email = ?', array($_POST['email'])); //ghbikjcm выбирать дополнительно пользователя, т к при создании мы не указываем role и она была пустая
+    $user = R::findOne('users', 'email = ?', array($_POST['email'])); //пришлось выбирать дополнительно пользователя, т к при создании мы не указываем role и она была пустая
     $_SESSION['logged_user'] = $user;
     $_SESSION['login'] = "1";
     $_SESSION['role'] = $user->role;
