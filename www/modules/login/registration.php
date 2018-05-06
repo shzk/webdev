@@ -18,20 +18,27 @@
 
 // Если форма отправлена - делаем регистрацию
 if (isset($_POST['register'])) {
-$errors = array();
+  $errors = array();
 
-if (trim($_POST['email']) == '') {
-$errors[] = ['title' => 'Введите email'];
-}
+  if (trim($_POST['email']) == '') {
+  $errors[] = ['title' => 'Введите email'];
+  }
 
-if (trim($_POST['password']) == '') {
-$errors[] = ['title' => 'Введите пароль'];
-}
+  if (trim($_POST['password']) == '') {
+  $errors[] = ['title' => 'Введите пароль'];
+  }
 
-if (R::count('users', 'email = ?', array($_POST['email'])) > 0) {
-$errors[] = ['title' => 'Пользователь с таким email уже зарегистрирован', 'desc' => 'Используйте другой email, или воспользуйтесь восстановлением пароля'];
-}
+  if (R::count('users', 'email = ?', array($_POST['email'])) > 0) {
+  $errors[] = ['title' => 'Пользователь с таким email уже зарегистрирован', 'desc' => 'Используйте другой email, или воспользуйтесь восстановлением пароля'];
+  }
 
+  if (empty($errors)) {
+    //Allright, register!
+    $user = R::dispense('users');
+    $user->email = htmlentities($_POST['email']);
+    $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    R::store($user);
+  }
 }
 
 ob_start();
