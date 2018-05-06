@@ -1,4 +1,4 @@
-<form class="form-container" action="login" id="form-validate" method="POST">
+<form class="form-container" action="<?=HOST?>login" id="form-validate" method="POST">
         <div class="form-title">Вход на сайт</div>
         
         <?php require ROOT."/templates/_parts/_errors.tpl"?>

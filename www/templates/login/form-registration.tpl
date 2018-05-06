@@ -1,4 +1,4 @@
-<form class="form-container" action="registration" id="form-validate" method="POST">
+<form class="form-container" action="<?=HOST?>registration" id="form-validate" method="POST">
         <div class="form-title">Регистрация</div>
 
         <?php require ROOT."/templates/_parts/_errors.tpl"?>        
