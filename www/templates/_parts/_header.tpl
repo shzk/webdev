@@ -1,20 +1,10 @@
-<div class="nav-admin">
-    <div class="avatar avatar-small"><img src="/img/avatar-img/photo-small.jpg" alt=""/></div>
-    <div class="admin-profile">
-      <div class="admin-profile__name">Юрий Ключевский</div><a class="btn btn--admin" href="#">Администратор</a>
-    </div>
-    <nav>
-      <ul class="admin-menu">
-        <li><i class="fas fa-plus-circle"></i><a href="/post-edit.html">Пост</a></li>
-        <li><i class="fas fa-edit"></i><a href="/about-edit.html">Обо мне</a></li>
-        <li><i class="fas fa-plus-circle"></i><a href="/work-edit.html">Работа</a></li>
-        <li><i class="fas fa-edit"></i><a href="/contact-edit.html">Контакты</a></li>
-        <li><i class="fas fa-envelope"></i><a href="/message-edit.html">Сообщения</a></li>
-      </ul>
-    </nav>
-    <div class="admin-login"><i class="fas fa-sign-out-alt"></i><a href="<?php echo HOST . "logout"; ?>">Выход</a></div>
-  </div> <!-- /nav-admin -->
-
+<?php 
+    if (isset($_SESSION['logged_user']) && $_SESSION['login'] == "1") {
+      if ($_SESSION['role'] == 'admin') {
+        include ROOT . "templates/_parts/_admin-header.tpl";
+      } 
+    } 
+  ?>
   <div class="header-user">
 
     <div class="header-user__content">
@@ -22,12 +12,12 @@
       <div class="header-user__mobile-bar" id="navigation-toggle">
         <div class="header-user__mobile-toggle">
           <svg class="icon icon-nav nav-mod">
-            <use xlink:href="/img/sprite.svg#nav"></use>
+            <use xlink:href="<?=HOST?>templates/assets/img/sprite.svg#nav"></use>
           </svg>
         </div>
         <div class="header-user__mobile-close">
           <svg class="icon icon-close close-mod">
-            <use xlink:href="/img/sprite.svg#close"></use>
+            <use xlink:href="<?=HOST?>templates/assets/img/sprite.svg#close"></use>
           </svg>
         </div>
         <p>Открыть навигацию</p>
@@ -48,14 +38,10 @@
 
       <?php 
         if (isset($_SESSION['logged_user']) && $_SESSION['login'] == "1") {
-          if ($_SESSION['role'] == 'admin') {
-            echo "admin logged in";
-          } else {
+          if ($_SESSION['role'] == 'user') {
             include ROOT . "templates/_parts/_user-header.tpl";
           }
-        } else {
-          echo "no user";
-        }
+        } 
       ?>
 
       <div class="header-user__nav-box" id="navigation-menu">
