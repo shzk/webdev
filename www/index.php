@@ -21,6 +21,10 @@ switch ($uri[0]) {
         include "modules/login/login.php";
         break;
 
+    case 'logout':
+        include "modules/login/logout.php";
+        break;
+
     case 'registration':
         include "modules/login/registration.php";
         break;

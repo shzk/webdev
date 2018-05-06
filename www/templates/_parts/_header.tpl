@@ -12,7 +12,7 @@
         <li><i class="fas fa-envelope"></i><a href="/message-edit.html">Сообщения</a></li>
       </ul>
     </nav>
-    <div class="admin-login"><i class="fas fa-sign-out-alt"></i><a href="#">Выход</a></div>
+    <div class="admin-login"><i class="fas fa-sign-out-alt"></i><a href="<?php echo HOST . "logout"; ?>">Выход</a></div>
   </div> <!-- /nav-admin -->
 
   <div class="header-user">

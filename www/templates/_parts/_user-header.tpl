@@ -14,7 +14,7 @@
           </form>
         </div>
         <div class="header-user__inner-quit">
-          <form><a class="button button-header-user__inner-btn" href="#"> Выход </a>
+          <form><a class="button button-header-user__inner-btn" href="<?php echo HOST . "logout"; ?>"> Выход </a>
           </form>
         </div>
       </div>
