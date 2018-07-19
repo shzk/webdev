@@ -40,7 +40,7 @@
           }
       ?>
 
-      <?php include ROOT . "templates/_parts/_universal-nav.tpl"); ?>
+      <?php include ROOT . "templates/_parts/_universal-nav.tpl"; ?>
 
     </div> <!-- /header-user__content -->
   </div> <!-- /header-user -->

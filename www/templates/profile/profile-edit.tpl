@@ -4,7 +4,7 @@
         <div class="col"></div>
         <div class="col-10">
           <h1>Редактировать профиль</h1>
-          <form action="<?=HOST?>profile-edit" method="POST">
+          <form enctype="multipart/form-data" action="<?=HOST?>profile-edit" method="POST">
           <?php require ROOT."/templates/_parts/_errors.tpl"?> 
             <section class="add-post">
               <div class="add-post__title">Имя</div>
@@ -27,12 +27,13 @@
                 <div class="form-download__title">Изображение jpg или png, рекомендуемый размер 205 на 205 пикселей, вес до 2Мб.</div>
                 <div class="form-download__container"> 
                   <label class="form-download__btn">Выбрать файл
-                    <input type="file" id="file" name="file" style="display:none;"/>
+                    <input type="file" id="file" name="avatar" value="<?=$user['avatar']?>"/>
+                    <!-- <input type="file" id="file" name="avatar" style="display:none;"/> -->
                   </label>
-                  <input class="form-download__file-name" id="value" type="text" value="Файл не выбран" disabled="disabled"/>
+                  <!-- <input class="form-download__file-name" id="value" type="text" value="Файл не выбран" disabled="disabled"/> -->
                 </div>
               </div>
-              <div class="avatar avatar-big"><img src="/img/avatar-img/photo-big.jpg" alt=""/></div>
+              <div class="avatar avatar-big"><img src="<?=HOST?>usercontent/avatar/<?=$user['avatar']?>" alt=""/></div>
             </section>
 
             <section class="add-post">
