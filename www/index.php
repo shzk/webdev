@@ -2,6 +2,7 @@
 
 require "config.php";
 require "db.php";
+require ROOT . "libs/functions.php";
 session_start();
 if (isset($_SESSION['logged_user'])) {$currentUser = $_SESSION['logged_user'];};
 
@@ -46,13 +47,7 @@ switch ($uri[0]) {
         include "modules/profile/edit.php";
         break;
 
-    case 'about':
-        include "modules/about/index.php";
-        break;
-        
-    case 'contacts':
-        include "modules/contacts/index.php";
-        break;
+    /* --- BLOG --- */
 
     case 'blog':
         include "modules/blog/index.php";
@@ -60,6 +55,16 @@ switch ($uri[0]) {
 
     case 'blog/post':
         include "modules/blog/post.php";
+        break;
+
+    /* --- PAGES --- */
+
+    case 'about':
+        include "modules/about/index.php";
+        break;
+        
+    case 'contacts':
+        include "modules/contacts/index.php";
         break;
 
     default:

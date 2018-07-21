@@ -2,7 +2,9 @@
     <div class="container">
       <div class="row">
         <div class="col">
-          <a class="button button-edit" href="#"> Добавить пост </a>
+          <?php if (isAdmin()) { ?>
+            <a class="button button-edit" href="#"> Добавить пост </a>
+          <?php } ?>
           <h1>Блог вебразработчика</h1>
         </div>
       </div>
