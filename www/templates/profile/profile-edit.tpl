@@ -25,25 +25,32 @@
               <div class="add-post__title">Фотография</div>
               <div class="form-download">
                 <div class="form-download__title">Изображение jpg или png, рекомендуемый размер 205 на 205 пикселей, вес до 2Мб.</div>
+
                 <div class="form-download__container"> 
-                  <label class="form-download__btn">Выбрать файл
-                    <input type="file" id="file" name="avatar" value="<?=$user['avatar']?>"/>
-                    <!-- <input type="file" id="file" name="avatar" style="display:none;"/> -->
+                  <!-- <label class="form-download__btn">Выбрать файл
+                    <input type="file" id="file" name="avatar" value="<?//=$user['avatar']?>" data-multiple-caption="{count} файлов выбрано" multiple/>
+                    <input type="file" id="file" name="avatar" style="display:none;"/>
                   </label>
-                  <!-- <input class="form-download__file-name" id="value" type="text" value="Файл не выбран" disabled="disabled"/> -->
+                  <input class="form-download__file-name" id="value" type="text" value="Файл не выбран" disabled="disabled"/> -->
+
+                  <fieldset>
+                    <input type="file" name="avatar" id="file" class="inputfile" data-multiple-caption="{count} файлов выбрано" multiple style="display:none;"/>
+                    <label class="form-download__btn" for="file">Выбрать файл</label> <span></span>
+                  </fieldset>
+
                 </div>
               </div>
-              <div class="avatar avatar-big"><img src="<?=HOST?>usercontent/avatar/<?=$user['avatar']?>" alt=""/></div>
+              <div class="avatar avatar-big"><img src="<?=HOST?>usercontent/avatar/<?=$currentUser['avatar']?>" alt=""/></div>
             </section>
 
             <section class="add-post">
               <div class="add-post__title">Страна</div>
-              <input class="form-full-width" type="text" name="country" value="<?=$currentUser->country?>"/>
+              <input class="form-full-width" type="text" name="country" value="<?=$currentUser['country']?>"/>
             </section>
 
             <section class="add-post">
               <div class="add-post__title">Email</div>
-              <input class="form-full-width" type="text" name="city" value="<?=$currentUser->city?>"/>
+              <input class="form-full-width" type="text" name="city" value="<?=$currentUser['city']?>"/>
             </section>
 
             <section class="add-post">
