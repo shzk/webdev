@@ -1,5 +1,5 @@
 <div class="nav-admin">
-    <div class="avatar avatar-small"><img src="<?=HOST?>usercontent/avatar/<?=$user['avatar_small']?>" alt=""/></div>
+    <div class="avatar avatar-small"><img src="<?=HOST?>usercontent/avatar/<?=$currentUser['avatar_small']?>" alt=""/></div>
     <div class="admin-profile">
       <div class="admin-profile__name"><?=$currentUser->name?> <?=$currentUser->secondname?></div><a class="btn btn--admin" href="<?=HOST?>profile">Администратор</a>
     </div>

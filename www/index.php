@@ -30,6 +30,14 @@ switch ($uri[0]) {
         include "modules/login/registration.php";
         break;
 
+    case 'lost-password':
+        include "modules/login/lost-password.php";
+        break;
+
+    case 'set-new-password':
+        include "modules/login/set-new-password.php";
+        break;
+
     case 'profile':
         include "modules/profile/index.php";
         break;
