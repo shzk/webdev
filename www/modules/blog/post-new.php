@@ -24,7 +24,8 @@ if (isset($_POST['postNew'])) {
   if (empty($errors)) {
     $post = R::dispense('posts');
     $post->title = htmlentities($_POST['postTitle']);
-    $post->text = htmlentities($_POST['postText']);
+		$post->text = htmlentities($_POST['postText']);
+		$post->dateTime = R::isoDateTime();
 
     if(isset($_FILES["postImg"]["name"]) && $_FILES["postImg"]["tmp_name"] != '') {
       // Write file image params in variables

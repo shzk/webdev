@@ -6,7 +6,7 @@
     <div class="comment__user_name"><?=$comment['name'].' '.$comment['secondname']?></div>
     <div class="time_container">
       <i class="far fa-clock"></i>
-      <div class="comment__date"><?=$comment['date_time']?></div>
+      <div class="comment__date"><?php echo rus_date("j F Y в H:i ", strtotime($comment['date_time'])); ?></div>
     </div>
   </div>
   <div class="comment__text">

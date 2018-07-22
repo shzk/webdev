@@ -1,4 +1,5 @@
 <?php
+
 function isAdmin(){
 	$result = false;
 	if ( isset($_SESSION['logged_user']) && $_SESSION['login'] == 1 ) {
@@ -8,6 +9,7 @@ function isAdmin(){
 	}
 	return $result;
 }
+
 function isLoggedIn(){
 	$result = false;
 	if ( isset($_SESSION['logged_user']) && $_SESSION['login'] == 1 ) {
@@ -15,6 +17,7 @@ function isLoggedIn(){
 	}
 	return $result;
 }
+
 function rus_date() {
 	// Перевод
 	$translate = array(
@@ -74,6 +77,7 @@ function rus_date() {
 		return strtr(date(func_get_arg(0)), $translate);
 	}
 }
+
 function commentNumber ($num) {
     //Оставляем две последние цифры от $num
 	$number = substr($num, -2);
@@ -93,6 +97,7 @@ function commentNumber ($num) {
 	}
 	echo  $num.' комментари'.$term;
 }
+
 // Adjusting text encoding
 function adopt($text) {
 	return '=?UTF-8?B?'.base64_encode($text).'?=';
