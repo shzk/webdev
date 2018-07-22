@@ -1,14 +1,25 @@
 <?php
 
-$postID = $_GET['id'];
-$post = R::load('posts', $postID);
+// $postID = $_GET['id'];
+// $post = R::load('posts', $postID);
 
-$sql = 'SELECT comments.text, comments.date_time, comments.user_id, users.name, users.secondname, users.avatar_small FROM comments INNER JOIN users ON comments.user_id = users.id WHERE comments.post_id = ' . $_GET['id'] ;
-$comments = R::getAll( $sql );
+$sqlAuthor = 'SELECT 	
+			posts.id, posts.title, posts.text, posts.post_img, posts.date_time, posts.author_id, users.name, users.secondname
+		FROM posts 
+		INNER JOIN users 
+		ON posts.author_id = users.id 
+    WHERE posts.id = ' . $_GET['id'] . ' LIMIT 1';
+$post = R::getAll( $sqlAuthor );
+$post = $post[0];
+echo "<pre>";
+print_r ($post);
+echo "</pre>";
 
-// echo "<pre>";
-// print_r ($comments);
-// echo "</pre>";
+$sqlComments = 'SELECT comments.text, comments.date_time, comments.user_id, users.name, users.secondname, users.avatar_small FROM comments INNER JOIN users ON comments.user_id = users.id WHERE comments.post_id = ' . $_GET['id'] ;
+$comments = R::getAll( $sqlComments );
+
+
+
 $errors = array();
 if (isset($_POST['addComment'])) {
   if ( trim($_POST['commentText']) == '') {

@@ -1,24 +1,18 @@
 <div class="full-post">
     <div class="container">
       <div class="row">
-        <div class="col">
-          <?php
-          echo "<pre>";
-          print_r ($post);
-          echo "</pre>";
-          ?>
-        </div>
+        <div class="col"></div>
         <div class="col-10">
           <?php if ( isAdmin() ) { ?>
             <a class="button button-edit" href="<?=HOST?>blog/post-edit?id=<?=$post['id']?>"> Редактировать </a>
           <?php }  ?>
-          <h1 class="full-post__title"><?=$post->title?></h1><span class="full-post__author">Емельян Казаков</span>
+          <h1 class="full-post__title"><?=$post['title']?></h1><span class="full-post__author"><?=$post['name'].' '.$post['secondname']?></span>
           <a class="full-post__link" href="#">Путешествия</a>
           <span class="full-post__date"><?php echo rus_date("j F Y", strtotime($post['date_time'])); ?></span>
           <a class="full-post__link" href="#comments"><?php commentNumber( count($comments) ); ?></a>
           <article>
-            <img class="full-post__img" src="<?=HOST?>usercontent/blog/<?=$post->post_img?>" alt="<?=$post->title?>"/>
-            <p><?=$post->text?></p>
+            <img class="full-post__img" src="<?=HOST?>usercontent/blog/<?=$post['post_img']?>" alt="<?=$post['title']?>"/>
+            <p><?=$post['text']?></p>
           </article>
           <div class="full-post__next-prew"><a class="button button-regular" href="#"> <span class="button__small-fa-icon"><i class="fas fa-arrow-left"></i></span>Назад  </a><a class="button button-regular" href="#"> Вперед  <span class="button__small-fa-icon"><i class="fas fa-arrow-right"></i></span></a>
           </div>

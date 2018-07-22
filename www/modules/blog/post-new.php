@@ -4,12 +4,6 @@ if(!isAdmin()) {
   header("Location: ". HOST);
   die;
 }
-// echo "<pre>";
-// print_r ($_POST);
-// echo "</pre>";
-// echo "<pre>";
-// print_r ($_FILES);
-// echo "</pre>";
 
 $errors = array();
 
@@ -25,6 +19,7 @@ if (isset($_POST['postNew'])) {
     $post = R::dispense('posts');
     $post->title = htmlentities($_POST['postTitle']);
 		$post->text = htmlentities($_POST['postText']);
+		$post->authorId = $currentUser['id'];
 		$post->dateTime = R::isoDateTime();
 
     if(isset($_FILES["postImg"]["name"]) && $_FILES["postImg"]["tmp_name"] != '') {
