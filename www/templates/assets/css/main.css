@@ -1304,7 +1304,7 @@ input[type="radio"][name="tabs"]:checked+.tab-label-content nav ul {
 
 .comment-post__title {
     font-size: 26px;
-    margin-bottom: 20px;
+    margin-bottom: 30px 20px;
 }
 
 
@@ -1316,6 +1316,9 @@ input[type="radio"][name="tabs"]:checked+.tab-label-content nav ul {
     grid-gap: 10px 20px;
     grid-row: 10px;
     grid-template-areas: "avatar author" "null form";
+    padding: 20px;
+    background-color: #f6f7f8;
+    border-radius: 5px;
 }
 
 .comment-post .avatar {

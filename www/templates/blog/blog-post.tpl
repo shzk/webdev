@@ -14,36 +14,46 @@
           </article>
           <div class="full-post__next-prew"><a class="button button-regular" href="#"> <span class="button__small-fa-icon"><i class="fas fa-arrow-left"></i></span>Назад  </a><a class="button button-regular" href="#"> Вперед  <span class="button__small-fa-icon"><i class="fas fa-arrow-right"></i></span></a>
           </div>
-          <h2>2 комментария</h2>
-          <div class="comment">
-            <div class="avatar avatar-small comment__avatar"><img src="/img/avatar-img/avatar_man.jpg" alt="Джон До"/></div>
-            <div class="comment__info__user_date">
-              <div class="comment__user_name">Джон До</div>
-              <div class="time_container"><i class="far fa-clock"></i>
-                <div class="comment__date">05 Мая 2017 года в 15:45</div>
+
+          <?php 	if ( count($comments) > 0) {  ?>
+            <h2 id="comments"><?php commentNumber( count($comments) ); ?></h2>
+            <?php foreach ($comments as $comment) {
+              include "blog-comment.tpl";
+            }
+          }?>
+        
+          <?php 
+            if (isLoggedIn()) { ?>
+              <div class="comment-post__title">Оставить комментарий</div>
+              <div class="comment-post">
+                <div class="avatar avatar-small">
+                  <img src="<?=HOST?>usercontent/avatar/<?=$_SESSION['logged_user']['avatarSmall']?>" alt="<?=$_SESSION['logged_user']['name'] . ' ' . $_SESSION['logged_user']['secondname']?>"/>
+                </div>
+                <div class="comment-post__author">
+                  <?=$_SESSION['logged_user']['name']?> 
+                  <?=$_SESSION['logged_user']['secondname']?>
+                </div>
+                <form class="comment-post__form" 
+                  method="POST" 
+                  action="<?=HOST?>blog/post?id=<?=$post['id']?>" > 
+                  <?php require ROOT. "templates/_parts/_errors.tpl" ?>
+                  <textarea class="form-message" 
+                    name="commentText" 
+                    placeholder="Присоединиться к обсуждению..."></textarea>
+                  <input type="submit" name="addComment" class="button button-regular" value="Опубликовать">
+                </form>
               </div>
-            </div>
-            <div class="comment__text">Замечательный парк, обязательно отправлюсь туда этим летом.</div>
-          </div>
-          <div class="comment">
-            <div class="avatar avatar-small comment__avatar"><img src="/img/avatar-img/avatar_woman.jpg" alt="Джон До"/></div>
-            <div class="comment__info__user_date">
-              <div class="comment__user_name">Джон До</div>
-              <div class="time_container"><i class="far fa-clock"></i>
-                <div class="comment__date">05 Мая 2017 года в 15:45</div>
+              
+            <?php } else { ?>
+              <div class="no-auth">
+                <div class="no-auth__title"> 
+                  <a href="<?=HOST?>login">Войдите</a> или 
+                  <a href="<?=HOST?>registration">зарегистрируйтесь</a><br/>
+                  чтобы оставить комментарий </div>
               </div>
-            </div>
-            <div class="comment__text">Замечательный парк, обязательно отправлюсь туда этим летом.</div>
-          </div>
-          <div class="comment-post__title">Оставить комментарий</div>
-          <div class="comment-post">
-            <div class="avatar avatar-small"><img src="/img/avatar-img/photo-small.jpg" alt=""/></div>
-            <div class="comment-post__author">Юрий Ключевский</div>
-            <div class="comment-post__form">
-              <div class="error-message error-message__comment">Комментарий не может быть пустым.</div>
-              <textarea class="form-message" name="Message" placeholder="Присоединиться к обсуждению..."></textarea><a class="button button-regular" href="#"> Опубликовать </a>
-            </div>
-          </div>
+				  <?php }?>
+
+
         </div>
         <div class="col"></div>
       </div>
