@@ -1,6 +1,7 @@
 <?php
 
-$blogPost = ['title' => 'post heading', 'text' => 'post text'];
+$postID = $_GET['id'];
+$post = R::load('posts', $postID);
 
 // готовим контент для центральной части
 ob_start();

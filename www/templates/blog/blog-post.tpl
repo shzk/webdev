@@ -2,10 +2,14 @@
     <div class="container">
       <div class="row">
         <div class="col"></div>
-        <div class="col-10"><a class="button button-edit" href="#"> Редактировать </a>
-          <h1 class="full-post__title"><?=$blogPost['title']?></h1><span class="full-post__author">Емельян Казаков</span><a class="full-post__link" href="#">Путешествия</a><span class="full-post__date">16 Марта 2017</span><a class="full-post__link" href="#">2 комментария</a>
+        <div class="col-10">
+          <a class="button button-edit" href="#"> Редактировать </a>
+          <h1 class="full-post__title"><?=$post->title?></h1><span class="full-post__author">Емельян Казаков</span>
+          <a class="full-post__link" href="#">Путешествия</a>
+          <span class="full-post__date">16 Марта 2017</span>
+          <a class="full-post__link" href="#">2 комментария</a>
           <article><img class="full-post__img" src="../img/posts/post-img.jpg" alt="Название картинки"/>
-            <p><?=$blogPost['text']?></p>
+            <p><?=$post->text?></p>
           </article>
           <div class="full-post__next-prew"><a class="button button-regular" href="#"> <span class="button__small-fa-icon"><i class="fas fa-arrow-left"></i></span>Назад  </a><a class="button button-regular" href="#"> Вперед  <span class="button__small-fa-icon"><i class="fas fa-arrow-right"></i></span></a>
           </div>
