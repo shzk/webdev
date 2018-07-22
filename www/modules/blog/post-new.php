@@ -64,14 +64,14 @@ if (isset($_POST['postNew'])) {
 			$resized_file = $postImgFolderLocation . $db_file_name;
 			$wmax = 920;
 			$hmax = 620;
-			$img = createThumbnail($target_file, $wmax, $hmax);
+			$img = createThumbnailBig($target_file, $wmax, $hmax);
 			$img->writeImage($resized_file);
 			$post->postImg = $db_file_name;
 			$target_file =  $postImgFolderLocation . $db_file_name;
 			$resized_file = $postImgFolderLocation . "320-" . $db_file_name;
 			$wmax = 320;
 			$hmax = 140;
-			$img = createThumbnail($target_file, $wmax, $hmax);
+			$img = createThumbnailCrop($target_file, $wmax, $hmax);
 			$img->writeImage($resized_file);
 			$post->postImgSmall = "320-" . $db_file_name;
     }
