@@ -8,7 +8,8 @@
           <a class="full-post__link" href="#">Путешествия</a>
           <span class="full-post__date">16 Марта 2017</span>
           <a class="full-post__link" href="#">2 комментария</a>
-          <article><img class="full-post__img" src="../img/posts/post-img.jpg" alt="Название картинки"/>
+          <article>
+            <img class="full-post__img" src="<?=HOST?>usercontent/blog/<?=$post->post_img?>" alt="<?=$post->title?>"/>
             <p><?=$post->text?></p>
           </article>
           <div class="full-post__next-prew"><a class="button button-regular" href="#"> <span class="button__small-fa-icon"><i class="fas fa-arrow-left"></i></span>Назад  </a><a class="button button-regular" href="#"> Вперед  <span class="button__small-fa-icon"><i class="fas fa-arrow-right"></i></span></a>
