@@ -11,10 +11,10 @@
         <nav class="header-user__nav">
           <ul class="menu">
             <li><a href="<?HOST?>">Главная</a></li>
-            <li><a href="<?HOST?>about">Обо мне</a></li>
-            <li><a href="<?HOST?>works">Работы</a></li>
-            <li><a href="<?HOST?>blog">Блог</a></li>
-            <li><a href="<?HOST?>contact">Контакты</a></li>
+            <li><a href="<?HOST?>/about">Обо мне</a></li>
+            <li><a href="<?HOST?>/works">Работы</a></li>
+            <li><a href="<?HOST?>/blog">Блог</a></li>
+            <li><a href="<?HOST?>/contact">Контакты</a></li>
           </ul>
         </nav>
       </div>
