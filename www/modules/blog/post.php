@@ -3,11 +3,11 @@
 $postID = $_GET['id'];
 $post = R::load('posts', $postID);
 
-$comments = R::findAll('comments', "post_id=$postID ORDER BY id DESC");
+$sql = 'SELECT comments.text, comments.date_time, comments.user_id, users.name, users.secondname, users.avatar_small FROM comments INNER JOIN users ON comments.user_id = users.id WHERE comments.post_id = ' . $_GET['id'] ;
+$comments = R::getAll( $sql );
 echo "<pre>";
 print_r ($comments);
 echo "</pre>";
-
 $errors = array();
 if (isset($_POST['addComment'])) {
   if ( trim($_POST['commentText']) == '') {
