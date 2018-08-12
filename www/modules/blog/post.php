@@ -3,12 +3,20 @@
 // $postID = $_GET['id'];
 // $post = R::load('posts', $postID);
 
-$sqlAuthor = 'SELECT 	
-			posts.id, posts.title, posts.text, posts.post_img, posts.date_time, posts.author_id, users.name, users.secondname
-		FROM posts 
-		INNER JOIN users 
-		ON posts.author_id = users.id 
-    WHERE posts.id = ' . $_GET['id'] . ' LIMIT 1';
+$sqlAuthor = '
+	SELECT 	
+		posts.id, posts.title, posts.text, posts.post_img, posts.date_time, posts.author_id, posts.cat,
+		users.name, users.secondname, 
+		categories.cat_title 
+	FROM posts 
+
+	INNER JOIN users 
+	ON posts.author_id = users.id 
+
+	INNER JOIN categories 
+	ON posts.cat = categories.id
+
+	WHERE posts.id =' . $_GET['id'] . ' LIMIT 1';
 $post = R::getAll( $sqlAuthor );
 $post = $post[0];
 // echo "<pre>";

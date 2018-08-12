@@ -23,7 +23,7 @@
               <?php foreach ($categories as $cat) { ?>
                 <tr>
                   <th scope="row"><?=$cat->id?></th>
-                  <td><?=$cat->title?></td>
+                  <td><?=$cat->cat_title?></td>
                   <td><a href="<?=HOST?>blog/category-edit?id=<?=$cat->id?>" class="button button-edit tbl-button">Редактировать</a></td>
                   <td>
                     <a href="<?=HOST?>blog/category-delete?id=<?=$cat->id?>" class="button button-delete">Удалить</a>

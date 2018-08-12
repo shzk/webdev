@@ -14,7 +14,7 @@ if (isset($_POST['catEdit'])) {
   $errors[] = ['title' => 'Введите название категории'];
   }
   if (empty($errors)) {
-    $category->title = htmlentities($_POST['catTitle']);
+    $category->cat_title = htmlentities($_POST['catTitle']);
     R::store($category);
     header('Location: ' . HOST . "blog/categories");
     exit();

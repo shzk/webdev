@@ -7,7 +7,7 @@
             <a class="button button-edit" href="<?=HOST?>blog/post-edit?id=<?=$post['id']?>"> Редактировать </a>
           <?php }  ?>
           <h1 class="full-post__title"><?=$post['title']?></h1><span class="full-post__author"><?=$post['name'].' '.$post['secondname']?></span>
-          <a class="full-post__link" href="#">Путешествия</a>
+          <a class="full-post__link" href="#"><?=$post['cat_title']?></a>
           <span class="full-post__date"><?php echo rus_date("j F Y", strtotime($post['date_time'])); ?></span>
           <a class="full-post__link" href="#comments"><?php commentNumber( count($comments) ); ?></a>
           <article>

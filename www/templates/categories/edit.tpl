@@ -7,7 +7,7 @@
           <h1>Редактировать категорию</h1>
           <section class="add-post">
             <div class="add-post__title">Название</div>
-            <input class="form-full-width" type="text" name="catTitle" placeholder="Введите название категории" value="<?=$category->title?>" >
+            <input class="form-full-width" type="text" name="catTitle" placeholder="Введите название категории" value="<?=$category->cat_title?>" >
           </section>
           <section class="add-post">
             <input type="submit" name="catEdit" class="button button-save" value="Редактировать" >

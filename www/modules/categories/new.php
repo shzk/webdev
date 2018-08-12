@@ -14,7 +14,7 @@ if (isset($_POST['catNew'])) {
   }
   if (empty($errors)) {
     $category = R::dispense('categories');
-    $category->title = htmlentities($_POST['catTitle']);
+    $category->cat_title = htmlentities($_POST['catTitle']);
     R::store($category);
     header('Location: ' . HOST . "blog/categories");
     exit();
