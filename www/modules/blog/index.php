@@ -1,8 +1,11 @@
 <?php
+if(isset($_GET['cat_id']) && $_GET['cat_id'] != '') {
+  $posts = R::find('posts', 'cat = ' . $_GET['cat_id'] . ' ORDER BY id DESC' );
+} else {
+  $posts = R::find('posts', ' ORDER BY id DESC' );
+}
 
-// $blogPosts = ['post1', 'post2', 'post3', 'post4', 'post5'];
 
-$posts = R::find('posts', ' ORDER BY id DESC' );
 
 // готовим контент для центральной части
 ob_start();

@@ -15,5 +15,10 @@
         include "blog-card.tpl";
       }?>
       </div>
+      <?php 
+        if(isset($_GET['cat_id'])) { ?>
+          <a href="<?=HOST?>blog" class="button">Просмотреть все записи</a>
+        <?php }
+      ?>
     </div>
   </div>
