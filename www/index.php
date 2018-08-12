@@ -61,6 +61,16 @@ switch ($uri[0]) {
 		include "modules/blog/post-new.php";
 		break;
 
+    /* ---- CATEGORIES ----- */
+
+    case 'blog/categories':
+		include "modules/categories/all.php";
+        break;
+        
+    case 'blog/category-new':
+		include "modules/categories/new.php";
+        break;
+
     /* --- PAGES --- */
 
     case 'about':

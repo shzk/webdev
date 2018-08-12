@@ -1,13 +1,16 @@
 <?php
 
-// $blogPosts = ['post1', 'post2', 'post3', 'post4', 'post5'];
+if(!isAdmin()) {
+  header("Location: ". HOST);
+  die;
+}
 
-$posts = R::find('posts', ' ORDER BY id DESC' );
+$categories = R::find('categories', ' ORDER BY id DESC' );
 
 // готовим контент для центральной части
 ob_start();
 include ROOT . "templates/_parts/_header.tpl";
-include ROOT . "templates/blog/blog-all-posts.tpl";
+include ROOT . "templates/categories/all.tpl";
 $content = ob_get_contents();
 ob_end_clean();
 

@@ -11,9 +11,9 @@ $sqlAuthor = 'SELECT
     WHERE posts.id = ' . $_GET['id'] . ' LIMIT 1';
 $post = R::getAll( $sqlAuthor );
 $post = $post[0];
-echo "<pre>";
-print_r ($post);
-echo "</pre>";
+// echo "<pre>";
+// print_r ($post);
+// echo "</pre>";
 
 $sqlComments = 'SELECT comments.text, comments.date_time, comments.user_id, users.name, users.secondname, users.avatar_small FROM comments INNER JOIN users ON comments.user_id = users.id WHERE comments.post_id = ' . $_GET['id'] ;
 $comments = R::getAll( $sqlComments );

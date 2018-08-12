@@ -5,7 +5,8 @@
     </div>
     <nav>
       <ul class="admin-menu">
-        <li><i class="fas fa-plus-circle"></i><a href="<?HOST?>post-edit">Пост</a></li>
+        <li><i class="fas fa-plus-circle"></i><a href="<?HOST?>/blog/post-new">Пост</a></li>
+        <li><i class="fas fa-folder"><i class="fas fa-plus"></i></i><a href="<?HOST?>/blog/categories">Категории</a></li>
         <li><i class="fas fa-edit"></i><a href="<?HOST?>about-edit">Обо мне</a></li>
         <li><i class="fas fa-plus-circle"></i><a href="<?HOST?>work-edit">Работа</a></li>
         <li><i class="fas fa-edit"></i><a href="<?HOST?>contact-edit">Контакты</a></li>
