@@ -33,7 +33,7 @@ function initMap(){
 
         title: 'Наш маркер: Красная Площадь',
 
-        icon: '.../templates/assets/img/googleMap/pin-green.png'
+        icon: '../templates/assets/img/googleMap/pin-green.png'
 
 });
 

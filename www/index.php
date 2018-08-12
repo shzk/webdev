@@ -88,6 +88,10 @@ switch ($uri[0]) {
     case 'contacts':
         include "modules/contacts/index.php";
         break;
+    
+    case 'contacts-edit':
+        include "modules/contacts/edit.php";
+        break;
 
     default:
         echo "404 and main page";
