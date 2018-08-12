@@ -70,6 +70,10 @@ switch ($uri[0]) {
     case 'blog/category-new':
 		include "modules/categories/new.php";
         break;
+    
+    case 'blog/category-edit':
+		include "modules/categories/edit.php";
+        break;
 
     /* --- PAGES --- */
 
