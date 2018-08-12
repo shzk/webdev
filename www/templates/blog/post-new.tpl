@@ -10,6 +10,14 @@
             <input class="form-full-width" type="text" name="postTitle" placeholder="Введите название записи"/>
           </section>
           <section class="add-post">
+            <div class="add-post__title">Категория</div>
+            <select name="postCat">
+              <?php foreach ($categories as $cat) { ?>
+                <option value="<?=$cat->id?>"><?=$cat->title?></option>
+              <?php } ?>
+            </select>
+          </section>
+          <section class="add-post">
             <div class="add-post__title">Изображение</div>
             <div class="form-download">
               <div class="form-download__title">Изображение jpg или png, размером больше чем 100х100 пикселей, и весом до 2Мб.</div>

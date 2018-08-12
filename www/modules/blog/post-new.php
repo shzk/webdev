@@ -7,6 +7,8 @@ if(!isAdmin()) {
 
 $errors = array();
 
+$categories = R::find('categories', ' ORDER BY id DESC' );
+
 // Если форма отправлена - создаем пост
 if (isset($_POST['postNew'])) {
   if (trim($_POST['postTitle']) == '') {
@@ -19,6 +21,7 @@ if (isset($_POST['postNew'])) {
     $post = R::dispense('posts');
     $post->title = htmlentities($_POST['postTitle']);
 		$post->text = htmlentities($_POST['postText']);
+		$post->cat = htmlentities($_POST['postCat']);
 		$post->authorId = $currentUser['id'];
 		$post->dateTime = R::isoDateTime();
 
