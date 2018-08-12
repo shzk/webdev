@@ -75,6 +75,10 @@ switch ($uri[0]) {
 		include "modules/categories/edit.php";
         break;
 
+    case 'blog/category-delete':
+		include "modules/categories/delete.php";
+        break;
+    
     /* --- PAGES --- */
 
     case 'about':

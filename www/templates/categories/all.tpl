@@ -26,7 +26,7 @@
                   <td><?=$cat->title?></td>
                   <td><a href="<?=HOST?>blog/category-edit?id=<?=$cat->id?>" class="button button-edit tbl-button">Редактировать</a></td>
                   <td>
-                    <a href="#" class="button button-delete">Удалить</a>
+                    <a href="<?=HOST?>blog/category-delete?id=<?=$cat->id?>" class="button button-delete">Удалить</a>
                   </td>
                 </tr>
               <?php }?>
