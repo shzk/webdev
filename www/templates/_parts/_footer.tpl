@@ -2,15 +2,15 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-sm">
-          <p class="footer-copy">© DreamTeam<br/>	Создано с <i class="fas fa-heart"> </i> в <a class="footer-link" href="http://webcademy.ru/" target="_blank">WebCademy.ru</a> в 2018 году</p>
+          <p class="footer-copy">© Denis Tokarev<br/>	Создано с <i class="fas fa-heart"> </i> в 2018 году</p>
         </div>
         <div class="col-md-3 col-sm">
           <ul class="menu">
-            <li><a href="/">Главная</a></li>
+            <li><a href="<?=HOST?>">Главная</a></li>
             <li><a href="/about.html">Обо мне</a></li>
             <li><a href="/works.html">Работы</a></li>
-            <li><a href="/blog.html">Блог</a></li>
-            <li><a href="/contact.html">Контакты</a></li>
+            <li><a href="<?=HOST?>blog">Блог</a></li>
+            <li><a href="<?=HOST?>contacts">Контакты</a></li>
           </ul>
         </div>
         <div class="col-md-5 col-sm">

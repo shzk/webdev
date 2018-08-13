@@ -1,5 +1,5 @@
 <?php if (isAdmin()) { ?>
-<div class="edit-contacts"><a class="button button-edit" href="<?=HOST?>contacts-edit"> Редактировать </a><a class="button button-contacts-edit-message" href="#"> Сообщение </a>
+<div class="edit-contacts"><a class="button button-edit" href="<?=HOST?>contacts-edit"> Редактировать </a>
   </div>
 <?php } ?>
   <main class="wrap-content">
@@ -45,8 +45,9 @@
           <?php } ?>
         </div>
       </div>
-      <form class="form" action="/" method="POST">
+      <form class="form" action="<?=HOST?>contacts" method="POST" enctype="multipart/form-data">
         <h1 class="contacts-title contact-title-form">Свяжитесь со мной</h1>
+        <?php include(ROOT . 'templates/_parts/_errors.tpl')?>
         <div class="input-error-message">
           <input class="form-name form-name-fullScreen" type="text" name="name" placeholder="Введите имя"/>
         </div>
@@ -54,11 +55,11 @@
           <input class="form-name form-name-fullScreen" type="text" name="email" placeholder="Введите Email"/>
         </div>
         <div class="input-error-message">
-          <textarea class="form-message mod_form-message--contacts-admin" name="Message" placeholder="Сообщение"></textarea>
+          <textarea class="form-message mod_form-message--contacts-admin" name="message" placeholder="Сообщение"></textarea>
         </div>
         <h5 class="form_btn-up-wrap"> Прикрепить файл</h5>
         <div class="form-download">
-          <div class="form-download__title">jpg, png, pdf, doc, весом до 2Мб.</div>
+          <div class="form-download__title">jpg, png, pdf, doc, весом до 4Мб.</div>
           <div class="form-download__container contacts-container-mod"> 
             <label class="form-download__btn contacts-btn-mod">Выбрать файл
               <input type="file" id="file" name="file" style="display:none;"/>
@@ -66,7 +67,8 @@
             <input class="form-download__file-name" id="value" type="text" value="Файл не выбран" disabled="disabled"/>
           </div>
         </div>
-        <div class="form_submit-button"><a class="button button-save" href="#"> Отправить </a>
+        <div class="form_submit-button">
+        <input class="button button-save" type="submit" name="newMessage" value="Отправить">
         </div>
       </form>
     </div>
