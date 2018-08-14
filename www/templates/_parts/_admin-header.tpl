@@ -10,7 +10,7 @@
         <li><i class="fas fa-edit"></i><a href="<?HOST?>about-edit">Обо мне</a></li>
         <li><i class="fas fa-plus-circle"></i><a href="<?HOST?>work-edit">Работа</a></li>
         <li><i class="fas fa-edit"></i><a href="<?HOST?>contacts-edit">Контакты</a></li>
-        <li><i class="fas fa-envelope"></i><a href="<?HOST?>message-edit">Сообщения</a></li>
+        <li><i class="fas fa-envelope"></i><a href="<?HOST?>messages">Сообщения</a></li>
       </ul>
     </nav>
     <div class="admin-login"><i class="fas fa-sign-out-alt"></i><a href="<?php echo HOST . "logout"; ?>">Выход</a></div>

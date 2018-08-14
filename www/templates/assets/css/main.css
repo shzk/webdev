@@ -1820,6 +1820,8 @@ input[type="radio"][name="tabs"]:checked+.tab-label-content nav ul {
 .comment-user {
     position: relative;
     padding: 20px;
+    margin: 20px;
+    border-radius: 4px;
 }
 
 .comment-user__message {

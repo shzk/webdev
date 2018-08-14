@@ -92,6 +92,10 @@ switch ($uri[0]) {
     case 'contacts-edit':
         include "modules/contacts/edit.php";
         break;
+    
+    case 'messages':
+        include "modules/contacts/messages.php";
+        break;
 
     default:
         echo "404 and main page";

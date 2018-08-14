@@ -44,6 +44,7 @@ if (isset($_POST['newMessage'])) {
 				$errors[] = 'File upload failed';
       }
       
+      $message->message_original_file = $fileName;
       $message->message_file = $db_file_name;
     }
 
