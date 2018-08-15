@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:8889
--- Время создания: Авг 12 2018 г., 17:13
+-- Время создания: Авг 15 2018 г., 08:04
 -- Версия сервера: 5.7.21
 -- Версия PHP: 7.1.19
 
@@ -81,6 +81,56 @@ INSERT INTO `comments` (`id`, `post_id`, `user_id`, `text`, `date_time`) VALUES
 (2, 3, 1, 'второй комментарий к посту 51', '2018-07-22 17:12:50'),
 (3, 3, 1, '3 коммент', '2018-07-22 17:24:57'),
 (4, 3, 3, 'комментарий от пользователя', '2018-07-22 17:47:01');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `contacts`
+--
+
+CREATE TABLE `contacts` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `skype` varchar(255) NOT NULL,
+  `vk` varchar(255) NOT NULL,
+  `fb` varchar(255) NOT NULL,
+  `tel` varchar(255) NOT NULL,
+  `address` text NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `secondname` varchar(255) NOT NULL,
+  `github` varchar(255) NOT NULL,
+  `twitter` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `contacts`
+--
+
+INSERT INTO `contacts` (`id`, `email`, `skype`, `vk`, `fb`, `tel`, `address`, `name`, `secondname`, `github`, `twitter`) VALUES
+(1, 'den4@me.com', 'datokarev', 'https://vk.com/tokarevda', 'https://fb.com/tokarevda', '+79119358494', 'Ru, SaintP, Solidarnosti street 12-2-200', 'Denis', 'Tokarev', '', 'https://twitter.com/shzk');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `messages`
+--
+
+CREATE TABLE `messages` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `message` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `message_file` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `message_original_file` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `date_time` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Дамп данных таблицы `messages`
+--
+
+INSERT INTO `messages` (`id`, `name`, `email`, `message`, `message_file`, `message_original_file`, `date_time`) VALUES
+(4, 'test', 'den4@me.com', 'test message', '926397390693.jpg', 'photo_2018-08-14_18-31-35.jpg', '2018-08-15 07:46:44');
 
 -- --------------------------------------------------------
 
@@ -166,6 +216,18 @@ ALTER TABLE `comments`
   ADD KEY `index_foreignkey_comments_user` (`user_id`);
 
 --
+-- Индексы таблицы `contacts`
+--
+ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `posts`
 --
 ALTER TABLE `posts`
@@ -192,12 +254,24 @@ ALTER TABLE `about`
 -- AUTO_INCREMENT для таблицы `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT для таблицы `comments`
 --
 ALTER TABLE `comments`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT для таблицы `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT для таблицы `messages`
+--
+ALTER TABLE `messages`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --

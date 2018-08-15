@@ -14,6 +14,7 @@ if (isset($_POST['newMessage'])) {
     $message->name = htmlentities($_POST['name']);
     $message->email = htmlentities($_POST['email']);
     $message->message = htmlentities($_POST['message']);
+    $message->dateTime = R::isoDateTime();
 
     if(isset($_FILES["file"]["name"]) && $_FILES["file"]["tmp_name"] != '') {
       // Write file image params in variables

@@ -60,11 +60,15 @@
         <h5 class="form_btn-up-wrap"> Прикрепить файл</h5>
         <div class="form-download">
           <div class="form-download__title">jpg, png, pdf, doc, весом до 4Мб.</div>
-          <div class="form-download__container contacts-container-mod"> 
-            <label class="form-download__btn contacts-btn-mod">Выбрать файл
-              <input type="file" id="file" name="file" style="display:none;"/>
+          <div class="form-download__container contacts-container-mod">
+          <fieldset>
+            <input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} файлов выбрано" multiple style="display:none;"/>
+            <label class="form-download__btn contacts-btn-mod" for="file">Выбрать файл</label> <span></span>
+          </fieldset>
+            <!-- <label class="form-download__btn contacts-btn-mod">Выбрать файл
+              <input type="file" id="file" name="file" class="inputfile" data-multiple-caption="{count} файлов выбрано" multiple style="display:none;"/>
             </label>
-            <input class="form-download__file-name" id="value" type="text" value="Файл не выбран" disabled="disabled"/>
+            <input class="form-download__file-name" id="value" type="text" value="Файл не выбран" disabled="disabled"/> -->
           </div>
         </div>
         <div class="form_submit-button">

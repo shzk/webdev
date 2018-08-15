@@ -5,6 +5,11 @@ if(!isAdmin()) {
   die;
 }
 
+if (isset($_GET['id'])) {
+  $delMessage = R::load('messages', $_GET['id']);
+  R::trash($delMessage);
+}
+
 $messages = R::find('messages', ' ORDER BY id DESC' );
 
 // готовим контент для центральной части
