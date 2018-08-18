@@ -1,5 +1,5 @@
 <?php
-
+$page_title = "Денис Токарев - Восстановление пароля";
 // echo "<pre>";
 // print_r($_POST);
 // echo "</pre>";
@@ -42,10 +42,10 @@ if ( isset($_POST['lost'])) {
 }
 
 ob_start();
+include ROOT . "templates/_parts/_head.tpl";
 include ROOT . "templates/login/form-lost-password.tpl";
 $content = ob_get_contents();
 ob_end_clean();
 
-include ROOT . "templates/_parts/_head.tpl";
 include ROOT . "templates/login/login-page.tpl";
 include ROOT . "templates/_parts/_scripts.tpl";

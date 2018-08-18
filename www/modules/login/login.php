@@ -1,5 +1,5 @@
 <?php
-
+$page_title = "Денис Токарев - Страница входа";
 // echo "<pre>";
 // print_r($_POST);
 // echo "</pre>";
@@ -34,10 +34,10 @@ if (isset($_POST['login'])) {
 }
 
 ob_start();
+include ROOT . "templates/_parts/_head.tpl";
 include ROOT . "templates/login/form-login.tpl";
 $content = ob_get_contents();
 ob_end_clean();
 
-include ROOT . "templates/_parts/_head.tpl";
 include ROOT . "templates/login/login-page.tpl";
 include ROOT . "templates/_parts/_scripts.tpl";

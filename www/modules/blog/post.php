@@ -1,5 +1,5 @@
 <?php
-
+//$page_title is on line #22
 // $postID = $_GET['id'];
 // $post = R::load('posts', $postID);
 
@@ -19,6 +19,7 @@ $sqlAuthor = '
 	WHERE posts.id =' . $_GET['id'] . ' LIMIT 1';
 $post = R::getAll( $sqlAuthor );
 $post = $post[0];
+$page_title = "Денис Токарев - Блог - {$post['title']}";
 // echo "<pre>";
 // print_r ($post);
 // echo "</pre>";
@@ -47,13 +48,13 @@ if (isset($_POST['addComment'])) {
 
 // готовим контент для центральной части
 ob_start();
+include ROOT . "templates/_parts/_head.tpl";
+include ROOT . "templates/_parts/_header.tpl";
 include ROOT . "templates/blog/blog-post.tpl";
 $content = ob_get_contents();
 ob_end_clean();
 
 // выводим шаблоны
-include ROOT . "templates/_parts/_head.tpl";
-include ROOT . "templates/_parts/_header.tpl";
 include ROOT . "templates/template.tpl";
 include ROOT . "templates/_parts/_scripts.tpl";
 include ROOT . "templates/_parts/_footer.tpl";

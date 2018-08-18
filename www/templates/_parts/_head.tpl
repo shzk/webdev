@@ -2,7 +2,13 @@
 <html lang="en"></html>
 <head>
   <meta charset="UTF-8"/>
-  <title>Вход на сайт</title>
+  <title>
+  <?php if (isset($page_title)) {
+    echo $page_title;
+  } else {
+    echo "Denis Tokarev";
+  } ?>
+  </title>
   <!--[if IE]>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <![endif]-->

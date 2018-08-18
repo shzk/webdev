@@ -9,8 +9,9 @@
           <p><?=$about->description?></p>
           <h3>Что я умею</h3>
           <p><?=$about->skills?></p>
-          <div class="about-button"><a class="button button-edit" href="#"> Редактировать </a>
-          </div>
+          <?php if (isAdmin()) { ?>
+              <a class="button button-edit" href="<?=HOST?>about-edit"> Редактировать </a>
+          <?php } ?>
         </div>
       </div>
     </div>
@@ -67,6 +68,9 @@
           </div>
         </div>
       </div>
+      <?php if (isAdmin()) { ?>
+        <a class="button button-edit" href="<?=HOST?>skills-edit"> Редактировать </a>
+      <?php } ?>
     </div>
   </div>
   <div class="container work-experience">
@@ -74,6 +78,11 @@
       <div class="col-md-4 col-lg-3"></div>
       <div class="col-md-8 col-lg-9">
         <h1>Опыт работы</h1>
+        <?php if (isAdmin()) { ?>
+            <div class="about-button">
+              <a class="button button-edit" href="<?=HOST?>experience-edit"> Редактировать </a>
+            </div>
+          <?php } ?>
         <div class="work-item">
           <div class="work-item__date">февраль 2017  — по настоящее время</div>
           <div class="work-item-profile"><span class="work-item-profile__name">Frontend разработчик, Вконтактe, mail.ru group</span></div>

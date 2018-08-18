@@ -84,6 +84,18 @@ switch ($uri[0]) {
     case 'about':
         include "modules/about/index.php";
         break;
+
+    case 'about-edit':
+        include "modules/about/edit.php";
+        break;
+
+    case 'experience-edit':
+        include "modules/about/experience-edit.php";
+        break;
+
+    case 'skills-edit':
+        include "modules/about/skills-edit.php";
+        break;
         
     case 'contacts':
         include "modules/contacts/index.php";

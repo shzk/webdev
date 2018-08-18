@@ -1,5 +1,5 @@
 <?php
-
+$page_title = "Денис Токарев - Регистрация";
 // Если форма отправлена - делаем регистрацию
 if (isset($_POST['register'])) {
   $errors = array();
@@ -33,10 +33,10 @@ if (isset($_POST['register'])) {
 }
 
 ob_start();
+include ROOT . "templates/_parts/_head.tpl";
 include ROOT . "templates/login/form-registration.tpl";
 $content = ob_get_contents();
 ob_end_clean();
 
-include ROOT . "templates/_parts/_head.tpl";
 include ROOT . "templates/login/login-page.tpl";
 include ROOT . "templates/_parts/_scripts.tpl";
