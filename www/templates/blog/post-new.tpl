@@ -36,7 +36,7 @@
           </section>
           <section class="add-post">
             <div class="add-post__title">Содержание</div>
-            <textarea class="form-message" name="postText" placeholder="Введите текст записи"></textarea>
+            <textarea id="ck" class="form-message" name="postText" placeholder="Введите текст записи"></textarea>
             <input type="submit" name="postNew" class="button button-save" value="Сохранить" >
             <a class="button button-delete" href="#"> Отмена </a>
           </section>

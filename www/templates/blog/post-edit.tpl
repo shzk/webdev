@@ -56,7 +56,7 @@
           </section>
           <section class="add-post">
             <div class="add-post__title">Содержание</div>
-            <textarea class="form-message" name="text" placeholder="Сообщение"><?=$post->text?></textarea>
+            <textarea id="ck" class="form-message" name="text" placeholder="Сообщение"><?=$post->text?></textarea>
             <input type="submit" class="button button-save" value="Сохранить" name="postUpdate">
             <a class="button button-regular" href="<?=HOST?>blog/post?id=<?=$post->id?>"> Отмена </a>
           </section>

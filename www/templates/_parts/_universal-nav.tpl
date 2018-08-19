@@ -10,7 +10,7 @@
         <label for="tab1">Страницы</label>
         <nav class="header-user__nav">
           <ul class="menu">
-            <li><a href="<?HOST?>">Главная</a></li>
+            <li><a href="<?=HOST?>">Главная</a></li>
             <li><a href="<?=HOST?>about">Обо мне</a></li>
             <li><a href="<?=HOST?>works">Работы</a></li>
             <li><a href="<?=HOST?>blog">Блог</a></li>
@@ -23,11 +23,11 @@
         <label for="tab2">Админка</label>
         <nav Class="menu-admin">
           <ul>
-            <li><i class="fas fa-plus-circle"></i><a href="<?HOST?>post-edit">Пост</a></li>
-            <li><i class="fas fa-edit"></i><a href="<?HOST?>about-edit">Обо мне</a></li>
-            <li><i class="fas fa-plus-circle"></i><a href="<?HOST?>work-edit">Работа</a></li>
-            <li><i class="fas fa-edit"></i><a href="<?HOST?>contact-edit">Контакты</a></li>
-            <li><i class="fas fa-envelope"></i><a href="<?HOST?>message-edit">Сообщения</a></li>
+            <li><i class="fas fa-plus-circle"></i><a href="<?=HOST?>post-edit">Пост</a></li>
+            <li><i class="fas fa-edit"></i><a href="<?=HOST?>about-edit">Обо мне</a></li>
+            <li><i class="fas fa-plus-circle"></i><a href="<?=HOST?>work-edit">Работа</a></li>
+            <li><i class="fas fa-edit"></i><a href="<?=HOST?>contact-edit">Контакты</a></li>
+            <li><i class="fas fa-envelope"></i><a href="<?=HOST?>message-edit">Сообщения</a></li>
           </ul>
         </nav>
       </div>

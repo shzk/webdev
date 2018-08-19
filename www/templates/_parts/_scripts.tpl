@@ -1,6 +1,7 @@
 <!-- build:jsLibs js/libs.js -->
   <script src="<?=HOST?>templates/assets/
 libs/jquery/jquery.min.js"></script><!-- endbuild -->
+<script src="<?=HOST?>libs/ckeditor/ckeditor.js"></script>
 <!-- build:jsVendor js/vendor.js --><!-- endbuild -->
 <!-- build:jsNavigation js/navigation.js -->
   <script src="<?=HOST?>templates/assets/

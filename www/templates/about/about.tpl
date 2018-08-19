@@ -13,9 +13,7 @@
       <div class="col-md-8 col-lg-9 resume-content">
         <div class="resume-content--text">
           <h1><?=$about->name?></h1>
-          <p><?=$about->description?></p>
-          <h3>Что я умею</h3>
-          <p><?=$about->skills?></p>
+          <div><?=$about->description?></div>
           <?php if (isAdmin()) { ?>
               <a class="button button-edit" href="<?=HOST?>about-edit"> Редактировать </a>
           <?php } ?>

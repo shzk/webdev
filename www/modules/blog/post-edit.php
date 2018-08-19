@@ -24,7 +24,7 @@ if (isset($_POST['postUpdate'])) {
   if (empty($errors)) {
     $post->title = htmlentities($_POST['title']);
     $post->cat_title = htmlentities($_POST['category']);
-    $post->text = htmlentities($_POST['text']);
+    $post->text = $_POST['text'];
 
     if(isset($_FILES["postImg"]["name"]) && $_FILES["postImg"]["tmp_name"] != '') {
       // Write file image params in variables

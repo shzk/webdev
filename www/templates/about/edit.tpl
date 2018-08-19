@@ -31,11 +31,7 @@
           </section>
           <section class="add-post">
             <div class="add-post__title">Информация на главной</div>
-            <textarea class="form-message" name="userInfo"><?=$about->description?></textarea>
-          </section>
-          <section class="add-post">
-            <div class="add-post__title">Что я умею</div>
-            <textarea class="form-message" name="userSkills"><?=$about->skills?></textarea>
+            <textarea id="ck" class="form-message" name="userInfo"><?=$about->description?></textarea>
           </section>
           <section>
             <input type="submit" class="button button-save" value="Обновить" name="aboutEdit">

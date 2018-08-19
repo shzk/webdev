@@ -16,16 +16,12 @@ if (isset($_POST['aboutEdit'])) {
     $errors[] = ['title' => 'Введите информацию для главной страницы'];
   }
 
-  if (trim($_POST['userSkills']) == '') {
-    $errors[] = ['title' => 'Введите навыки'];
-  }
   
 
   if (empty($errors)) {
     //Allright, update!
     $about->name = htmlentities($_POST['userName']);
-    $about->description = htmlentities($_POST['userInfo']);
-    $about->skills = htmlentities($_POST['userSkills']);
+    $about->description = $_POST['userInfo'];
 
     if ( isset($_FILES['avatar']['name']) && $_FILES['avatar']['tmp_name'] != "" ) {
 			
