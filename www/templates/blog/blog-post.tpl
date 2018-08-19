@@ -11,7 +11,11 @@
           <span class="full-post__date"><?php echo rus_date("j F Y", strtotime($post['date_time'])); ?></span>
           <a class="full-post__link" href="#comments"><?php commentNumber( count($comments) ); ?></a>
           <article>
-            <img class="full-post__img" src="<?=HOST?>usercontent/blog/<?=$post['post_img']?>" alt="<?=$post['title']?>"/>
+            <?php if ($post['post_img'] != "") { ?>
+              <img class="full-post__img" src="<?=HOST?>usercontent/blog/<?=$post['post_img']?>" alt="<?=$post['title']?>"/>
+            <?php } else { ?>
+              <img class="full-post__img" src="<?=HOST?>usercontent/blog/no_image.png" alt="<?=$post['title']?>"/>
+            <?php } ?>
             <p><?=$post['text']?></p>
           </article>
           <div class="full-post__next-prew"><a class="button button-regular" href="#"> <span class="button__small-fa-icon"><i class="fas fa-arrow-left"></i></span>Назад  </a><a class="button button-regular" href="#"> Вперед  <span class="button__small-fa-icon"><i class="fas fa-arrow-right"></i></span></a>

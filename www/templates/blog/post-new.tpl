@@ -14,7 +14,7 @@
             <div class="add-post__title">Категория</div>
             <select name="postCat">
               <?php foreach ($categories as $cat) { ?>
-                <option value="<?=$cat->id?>"><?=$cat->title?></option>
+                <option value="<?=$cat->id?>"><?=$cat->cat_title?></option>
               <?php } ?>
             </select>
           </section>
