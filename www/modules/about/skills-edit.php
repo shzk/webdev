@@ -3,31 +3,25 @@ if(!isAdmin()) {
   header("Location: ". HOST);
   die;
 }
-$technologies = R::find('technologies');
+$skills = R::findOne('skills', 1);
 
-if (isset($_POST['aboutEdit'])) {
+if (isset($_POST['skillsEdit'])) {
   $errors = array();
-
-  if (trim($_POST['userName']) == '') {
-    $errors[] = ['title' => 'Введите Имя и Фамилию'];
-  }
-
-  if (trim($_POST['userInfo']) == '') {
-    $errors[] = ['title' => 'Введите информацию для главной страницы'];
-  }
-
-  if (trim($_POST['userSkills']) == '') {
-    $errors[] = ['title' => 'Введите навыки'];
-  }
-  
 
   if (empty($errors)) {
     //Allright, update!
-    $about->name = htmlentities($_POST['userName']);
-    $about->description = htmlentities($_POST['userInfo']);
-    $about->skills = htmlentities($_POST['userSkills']);
+    $skills->html5 = htmlentities($_POST['html5']);
+    $skills->css3 = htmlentities($_POST['css3']);
+    $skills->javascript = htmlentities($_POST['javascript']);
+    $skills->jquery = htmlentities($_POST['jquery']);
+    $skills->php = htmlentities($_POST['php']);
+    $skills->mysql = htmlentities($_POST['mysql']);
+    $skills->git = htmlentities($_POST['git']);
+    $skills->gulp = htmlentities($_POST['gulp']);
+    $skills->bower = htmlentities($_POST['bower']);
+    $skills->webpack = htmlentities($_POST['webpack']);
     
-    R::store($about);
+    R::store($skills);
     header('Location: ' . HOST . 'about');
     exit();
   }

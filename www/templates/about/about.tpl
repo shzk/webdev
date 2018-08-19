@@ -40,9 +40,10 @@
         <div class="col-md-8 col-lg-9">
           <div class="about-skills-conteiner">
             <div class="skills_frontend" id="skills_frontend">
-              <?php for ($i=1; $i <= 4; $i++) { ?>
-                <div class="circle" id="<?=$technologies[$i]['name']?>" data-name=<?=$technologies[$i]['name']?> data-procent=<?=$technologies[$i]['success']?>></div>
-              <?php } ?>
+              <div class="circle" id="HTML5" data-name="HTML5" data-procent=<?=$skills->html5?>></div>
+              <div class="circle" id="CSS3" data-name="CSS3" data-procent=<?=$skills->css3?>></div>
+              <div class="circle" id="JS" data-name="JS" data-procent=<?=$skills->javascript?>></div>
+              <div class="circle" id="jQuery" data-name="jQuery" data-procent=<?=$skills->jquery?>></div>
             </div>
           </div>
         </div>
@@ -54,9 +55,8 @@
         <div class="col-md-8 col-lg-9">
           <div class="about-skills-conteiner">
             <div class="skills_backend" id="skills_backend">
-            <?php for ($i=5; $i <= 6; $i++) { ?>
-                <div class="circle" id="<?=$technologies[$i]['name']?>" data-name=<?=$technologies[$i]['name']?> data-procent=<?=$technologies[$i]['success']?>></div>
-              <?php } ?>
+            <div class="circle" id="PHP" data-name="PHP" data-procent=<?=$skills->php?>></div>
+            <div class="circle" id="MySQL" data-name="MySQL" data-procent=<?=$skills->mysql?>></div>
             </div>
           </div>
         </div>
@@ -68,9 +68,10 @@
         <div class="col-md-8 col-lg-9">
           <div class="about-skills-conteiner">
             <div class="skills_workflow" id="skills_workflow">
-            <?php for ($i=7; $i <= 10; $i++) { ?>
-                <div class="circle" id="<?=$technologies[$i]['name']?>" data-name=<?=$technologies[$i]['name']?> data-procent=<?=$technologies[$i]['success']?>></div>
-              <?php } ?>
+            <div class="circle" id="Git" data-name="Git" data-procent=<?=$skills->git?>></div>
+            <div class="circle" id="Gulp" data-name="Gulp" data-procent=<?=$skills->gulp?>></div>
+            <div class="circle" id="Bower" data-name="Bower" data-procent=<?=$skills->bower?>></div>
+            <div class="circle" id="Webpack" data-name="Webpack" data-procent=<?=$skills->webpack?>></div>
             </div>
           </div>
         </div>

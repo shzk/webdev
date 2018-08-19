@@ -39,7 +39,7 @@
           </section>
           <section>
             <input type="submit" class="button button-save" value="Обновить" name="aboutEdit">
-            <a href="<?=HOST?>about-edit" class="button button-delete">Отменить</a>
+            <a href="<?=HOST?>about" class="button button-delete">Отменить</a>
           </section>
         </div>
         <div class="col"></div>
