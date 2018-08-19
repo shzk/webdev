@@ -5,6 +5,7 @@
         <div class="col"></div>
         <div class="col-10">
           <h1>Добавить пост</h1>
+          <?php include(ROOT . 'templates/_parts/_errors.tpl')?>
           <section class="add-post">
             <div class="add-post__title">Название</div>
             <input class="form-full-width" type="text" name="postTitle" placeholder="Введите название записи"/>
