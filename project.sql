@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:8889
--- Время создания: Авг 15 2018 г., 08:04
+-- Время создания: Авг 19 2018 г., 17:06
 -- Версия сервера: 5.7.21
 -- Версия PHP: 7.1.19
 
@@ -29,15 +29,17 @@ SET time_zone = "+00:00";
 CREATE TABLE `about` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `description` text NOT NULL
+  `description` text NOT NULL,
+  `skills` text NOT NULL,
+  `photo` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `about`
 --
 
-INSERT INTO `about` (`id`, `name`, `description`) VALUES
-(1, 'Денис Токарев', 'Я веб-разработчик!');
+INSERT INTO `about` (`id`, `name`, `description`, `skills`, `photo`) VALUES
+(1, 'Денис Токарев', 'Я веб разработчик из СПб. Мне 35 лет. Занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.\r\n\r\nЭтот сайт я сделал в рамках обучения в школе онлайн обучения WebCademy. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!', 'Меня привлекет Frontend разработка, это не только моя работа, но и хобби.Также знаком и могу решать не сложные задачи на Backend.  Знаком и использую современный workflow, работаю с репозиториями git и сборкой проекта на gulp.', '993421632064.jpg');
 
 -- --------------------------------------------------------
 
@@ -47,8 +49,8 @@ INSERT INTO `about` (`id`, `name`, `description`) VALUES
 
 CREATE TABLE `categories` (
   `id` int(11) UNSIGNED NOT NULL,
-  `cat_title` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+  `cat_title` varchar(191) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `categories`
@@ -68,9 +70,9 @@ CREATE TABLE `comments` (
   `id` int(11) UNSIGNED NOT NULL,
   `post_id` int(11) UNSIGNED DEFAULT NULL,
   `user_id` int(11) UNSIGNED DEFAULT NULL,
-  `text` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `text` varchar(191) DEFAULT NULL,
   `date_time` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `comments`
@@ -112,18 +114,40 @@ INSERT INTO `contacts` (`id`, `email`, `skype`, `vk`, `fb`, `tel`, `address`, `n
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `jobs`
+--
+
+CREATE TABLE `jobs` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `period` varchar(191) DEFAULT NULL,
+  `title` varchar(191) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `jobs`
+--
+
+INSERT INTO `jobs` (`id`, `period`, `title`, `description`) VALUES
+(3, 'март 2013 &mdash; август 2015', 'Веб-разработчик, Cloud studio', 'Frontend и Backend для клиентских проектов студии. Работа над студийной CMS для интернет магазинов. Участие в разработке CRM системы &ldquo;Sky CRM&rdquo;. Стек используемых технологий: Git, JS, Angular.'),
+(4, 'сентябрь 2015 &mdash; январь 2017', 'Разработчик интерфейсов, Яндекс', 'Работы в проекте Яндекс Музыка. Создание новых разделов сервиса. Оптимизация и создание новых компонентов платформы.'),
+(5, 'февраль 2017 &mdash; по настоящее время', 'Frontend разработчик, Вконтактe, mail.ru group', 'Работы в команде Вконтакте. Работал в команде над обновление сервиса Музыка, работа над видео разделом. Создание видеоплеера. Создание кроссбраузерных компонентов. Работа над оптимизацией скорости загрузки медиа контента.');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `messages`
 --
 
 CREATE TABLE `messages` (
   `id` int(11) UNSIGNED NOT NULL,
-  `name` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `email` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `message` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `message_file` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `message_original_file` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `name` varchar(191) DEFAULT NULL,
+  `email` varchar(191) DEFAULT NULL,
+  `message` varchar(191) DEFAULT NULL,
+  `message_file` varchar(191) DEFAULT NULL,
+  `message_original_file` varchar(191) DEFAULT NULL,
   `date_time` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `messages`
@@ -140,14 +164,14 @@ INSERT INTO `messages` (`id`, `name`, `email`, `message`, `message_file`, `messa
 
 CREATE TABLE `posts` (
   `id` int(11) UNSIGNED NOT NULL,
-  `title` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `text` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `post_img` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `post_img_small` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `title` varchar(191) DEFAULT NULL,
+  `text` varchar(191) DEFAULT NULL,
+  `post_img` varchar(191) DEFAULT NULL,
+  `post_img_small` varchar(191) DEFAULT NULL,
   `date_time` datetime DEFAULT NULL,
   `author_id` int(11) UNSIGNED DEFAULT NULL,
   `cat` tinyint(1) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `posts`
@@ -158,6 +182,33 @@ INSERT INTO `posts` (`id`, `title`, `text`, `post_img`, `post_img_small`, `date_
 (4, 'Запись новая', 'Новое содержание записи', '154678626827.jpg', '320-154678626827.jpg', '2018-07-22 19:06:35', 1, 1),
 (5, 'пост с автором', 'Текст записи поста с автором', '863423798056.jpg', '320-863423798056.jpg', '2018-07-22 21:51:42', 1, 10),
 (6, 'тест категории', 'текст записи с категорией', '279722012599.JPG', '320-279722012599.JPG', '2018-08-12 15:30:17', 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `skills`
+--
+
+CREATE TABLE `skills` (
+  `id` int(11) NOT NULL,
+  `html5` int(11) NOT NULL,
+  `css3` int(11) NOT NULL,
+  `javascript` int(11) NOT NULL,
+  `jquery` int(11) NOT NULL,
+  `php` int(11) NOT NULL,
+  `mysql` int(11) NOT NULL,
+  `git` int(11) NOT NULL,
+  `gulp` int(11) NOT NULL,
+  `bower` int(11) NOT NULL,
+  `webpack` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `skills`
+--
+
+INSERT INTO `skills` (`id`, `html5`, `css3`, `javascript`, `jquery`, `php`, `mysql`, `git`, `gulp`, `bower`, `webpack`) VALUES
+(1, 90, 85, 75, 75, 80, 70, 80, 70, 40, 50);
 
 -- --------------------------------------------------------
 
@@ -222,6 +273,12 @@ ALTER TABLE `contacts`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `jobs`
+--
+ALTER TABLE `jobs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `messages`
 --
 ALTER TABLE `messages`
@@ -267,6 +324,12 @@ ALTER TABLE `comments`
 --
 ALTER TABLE `contacts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT для таблицы `jobs`
+--
+ALTER TABLE `jobs`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT для таблицы `messages`

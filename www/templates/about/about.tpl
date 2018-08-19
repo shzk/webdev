@@ -87,25 +87,17 @@
       <div class="col-md-8 col-lg-9">
         <h1>Опыт работы</h1>
         <?php if (isAdmin()) { ?>
-            <div class="about-button">
-              <a class="button button-edit" href="<?=HOST?>experience-edit"> Редактировать </a>
-            </div>
-          <?php } ?>
-        <div class="work-item">
-          <div class="work-item__date">февраль 2017  — по настоящее время</div>
-          <div class="work-item-profile"><span class="work-item-profile__name">Frontend разработчик, Вконтактe, mail.ru group</span></div>
-          <div class="work-item__message">Работы в команде Вконтакте. Работал в команде над обновление сервиса Музыка, работа над видео разделом. Создание видеоплеера. Создание кроссбраузерных компонентов. Работа над оптимизацией скорости загрузки медиа контента.</div>
-        </div>
-        <div class="work-item">
-          <div class="work-item__date">сентябрь 2015 — январь 2017</div>
-          <div class="work-item-profile"><span class="work-item-profile__name">Разработчик интерфейсов, Яндекс</span></div>
-          <div class="work-item__message">Работы в проекте Яндекс Музыка. Создание новых разделов сервиса. Оптимизация и создание новых компонентов платформы.</div>
-        </div>
-        <div class="work-item">
-          <div class="work-item__date">март 2013 — август 2015</div>
-          <div class="work-item-profile"><span class="work-item-profile__name">Веб-разработчик, Cloud studio</span></div>
-          <div class="work-item__message">Frontend и Backend для клиентских проектов студии. Работа над студийной CMS для интернет магазинов. Участие в разработке CRM системы “Sky CRM”. Стек используемых технологий: Git, JS, Angular.</div>
-        </div>
+          <div class="about-button">
+            <a class="button button-edit" href="<?=HOST?>experience-edit"> Редактировать </a>
+          </div>
+        <?php } ?>          
+        <?php foreach ($jobs as $work) { ?>
+          <div class="work-item">
+            <div class="work-item__date"><?=$work->period?></div>
+            <div class="work-item-profile"><span class="work-item-profile__name"><?=$work->title?></span></div>
+            <div class="work-item__message"><?=$work->description?></div>
+          </div>
+        <?php } ?>
       </div>
     </div>
   </div>

@@ -2,6 +2,7 @@
 $page_title = "Денис Токарев - Обо мне";
 $about = R::load('about', 1);
 $skills = R::findOne('skills',1);
+$jobs = R::find('jobs', 'ORDER BY id DESC');
 
 // готовим контент для центральной части
 ob_start();

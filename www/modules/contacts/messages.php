@@ -8,6 +8,8 @@ if(!isAdmin()) {
 if (isset($_GET['id'])) {
   $delMessage = R::load('messages', $_GET['id']);
   R::trash($delMessage);
+  header('Location: ' . HOST . 'messages');
+  exit();
 }
 
 $messages = R::find('messages', ' ORDER BY id DESC' );
