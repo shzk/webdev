@@ -15,11 +15,18 @@
         </div>
         <div class="col-md-5 col-sm">
           <ul class="footer-icons">
-            <li><a href="https://vk.com"><i class="fab fa-vk"></i></a></li>
-            <li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://www.youtube.com/"><i class="fab fa-youtube-square"></i></a></li>
-            <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+            <?php if ( $contacts->vk != "") {  ?>
+              <li><a href="<?=$contacts->vk?>"><i class="fab fa-vk"></i></a></li>
+            <?php } ?>
+            <?php if ( $contacts->github != "") {  ?>
+              <li><a href="<?=$contacts->github?>"><i class="fab fa-github"></i></a></li>
+            <?php } ?>
+            <?php if ( $contacts->twitter != "") {  ?>
+              <li><a href="<?=$contacts->twitter?>"><i class="fab fa-twitter"></i></a></li>
+            <?php } ?>
+            <?php if ( $contacts->fb != "") {  ?>
+              <li><a href="<?=$contacts->fb?>"><i class="fab fa-facebook-f"></i></a></li>
+            <?php } ?>
           </ul>
         </div>
       </div>

@@ -6,6 +6,8 @@ require ROOT . "libs/functions.php";
 session_start();
 if (isset($_SESSION['logged_user'])) {$currentUser = $_SESSION['logged_user'];};
 
+$contacts = R::load('contacts', 1);
+
 /* --------- РОУТЕР ----------- */
 $uri = $_SERVER['REQUEST_URI'];
 $uri = rtrim($uri, "/");
