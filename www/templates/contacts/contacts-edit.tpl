@@ -47,6 +47,12 @@
             <div class="edit-inp form-edit_wrap fix-margin">Адрес
               <textarea class="form-message" rows="5" name="address" placeholder="Введите адрес"><?=$contacts->address?></textarea><span class="error"></span>
             </div>
+            <div class="edit-inp form-edit_wrap">Широта
+              <input class="form-name edit-input" type="text" name="lat" placeholder="Введите широту" value="<?=$contacts->lat?>"/><span class="error"></span>
+            </div>
+            <div class="edit-inp form-edit_wrap">Долгота
+              <input class="form-name edit-input" type="text" name="lng" placeholder="Введите долготу" value="<?=$contacts->lng?>"/><span class="error"></span>
+            </div>
           </div>
         </div>
         <div class="row-inp button-row">
@@ -56,8 +62,3 @@
       </form>
     </div>
   </main>
-  <div class="map-wrapp">
-    <div class="map-conteiner" id="map"></div>
-  </div>
-  <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIr67yxxPmnF-xb4JVokCVGgLbPtuqxiA&callback=initMap"></script>
-  <script async src="<?=HOST?>templates/assets/js/googleMap.js"></script>

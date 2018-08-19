@@ -34,6 +34,8 @@ if (isset($_POST['contactsUpdate'])) {
     $contacts->github = htmlentities($_POST['github']);
     $contacts->tel = htmlentities($_POST['tel']);
     $contacts->address = htmlentities($_POST['address']);
+    $contacts->lat = htmlentities($_POST['lat']);
+    $contacts->lng = htmlentities($_POST['lng']);
 
     R::store($contacts);
     header('Location: ' . HOST . 'contacts');

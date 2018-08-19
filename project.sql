@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:8889
--- Время создания: Авг 19 2018 г., 17:06
+-- Время создания: Авг 19 2018 г., 22:38
 -- Версия сервера: 5.7.21
 -- Версия PHP: 7.1.19
 
@@ -30,7 +30,6 @@ CREATE TABLE `about` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` text NOT NULL,
-  `skills` text NOT NULL,
   `photo` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -38,8 +37,8 @@ CREATE TABLE `about` (
 -- Дамп данных таблицы `about`
 --
 
-INSERT INTO `about` (`id`, `name`, `description`, `skills`, `photo`) VALUES
-(1, 'Денис Токарев', 'Я веб разработчик из СПб. Мне 35 лет. Занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.\r\n\r\nЭтот сайт я сделал в рамках обучения в школе онлайн обучения WebCademy. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!', 'Меня привлекет Frontend разработка, это не только моя работа, но и хобби.Также знаком и могу решать не сложные задачи на Backend.  Знаком и использую современный workflow, работаю с репозиториями git и сборкой проекта на gulp.', '993421632064.jpg');
+INSERT INTO `about` (`id`, `name`, `description`, `photo`) VALUES
+(1, 'Денис Токарев', '<p>Я веб разработчик из СПб. Мне 35 лет. Занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты. Этот сайт я сделал в рамках обучения на одном из курсов по Fullstack разработке.</p>\r\n\r\n<h3>Что я умею</h3>\r\n<p>Меня привлекает Frontend разработка, это не только моя работа, но и хобби. Также знаком и могу решать достаточно сложные задачи на Backend. Знаком с современным workflow и использую его в своей работе, работаю с git репозиториями и сборкой проекта на gulp.</p>', '993421632064.jpg');
 
 -- --------------------------------------------------------
 
@@ -101,15 +100,17 @@ CREATE TABLE `contacts` (
   `name` varchar(255) NOT NULL,
   `secondname` varchar(255) NOT NULL,
   `github` varchar(255) NOT NULL,
-  `twitter` varchar(255) NOT NULL
+  `twitter` varchar(255) NOT NULL,
+  `lat` varchar(9) NOT NULL,
+  `lng` varchar(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `contacts`
 --
 
-INSERT INTO `contacts` (`id`, `email`, `skype`, `vk`, `fb`, `tel`, `address`, `name`, `secondname`, `github`, `twitter`) VALUES
-(1, 'den4@me.com', 'datokarev', 'https://vk.com/tokarevda', 'https://fb.com/tokarevda', '+79119358494', 'Ru, SaintP, Solidarnosti street 12-2-200', 'Denis', 'Tokarev', '', 'https://twitter.com/shzk');
+INSERT INTO `contacts` (`id`, `email`, `skype`, `vk`, `fb`, `tel`, `address`, `name`, `secondname`, `github`, `twitter`, `lat`, `lng`) VALUES
+(1, 'den4@me.com', 'datokarev', 'https://vk.com/tokarevda', 'https://fb.com/tokarevda', '+79119358494', 'Ru, SaintP, Solidarnosti street 12-2-200', 'Denis', 'Tokarev', 'https://github.com/shzk', 'https://twitter.com/shzk', '59.944002', '30.306271');
 
 -- --------------------------------------------------------
 
@@ -170,18 +171,19 @@ CREATE TABLE `posts` (
   `post_img_small` varchar(191) DEFAULT NULL,
   `date_time` datetime DEFAULT NULL,
   `author_id` int(11) UNSIGNED DEFAULT NULL,
-  `cat` tinyint(1) UNSIGNED DEFAULT NULL
+  `cat` tinyint(1) UNSIGNED DEFAULT NULL,
+  `cat_title` tinyint(1) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `posts`
 --
 
-INSERT INTO `posts` (`id`, `title`, `text`, `post_img`, `post_img_small`, `date_time`, `author_id`, `cat`) VALUES
-(3, 'Запись 2', 'Текст второго поста', '553342585793.jpg', '320-553342585793.jpg', '2018-07-22 15:34:35', 1, 1),
-(4, 'Запись новая', 'Новое содержание записи', '154678626827.jpg', '320-154678626827.jpg', '2018-07-22 19:06:35', 1, 1),
-(5, 'пост с автором', 'Текст записи поста с автором', '863423798056.jpg', '320-863423798056.jpg', '2018-07-22 21:51:42', 1, 10),
-(6, 'тест категории', 'текст записи с категорией', '279722012599.JPG', '320-279722012599.JPG', '2018-08-12 15:30:17', 1, 1);
+INSERT INTO `posts` (`id`, `title`, `text`, `post_img`, `post_img_small`, `date_time`, `author_id`, `cat`, `cat_title`) VALUES
+(3, 'Запись 2', 'Текст второго поста', '553342585793.jpg', '320-553342585793.jpg', '2018-07-22 15:34:35', 1, 1, NULL),
+(4, 'Запись новая', 'Новое содержание записи', '154678626827.jpg', '320-154678626827.jpg', '2018-07-22 19:06:35', 1, 1, NULL),
+(5, 'пост с автором', 'Текст записи поста с автором', '863423798056.jpg', '320-863423798056.jpg', '2018-07-22 21:51:42', 1, 10, NULL),
+(6, 'тест категории', '<p>текст записи с <strong>категорией</strong></p>\r\n', '', '', '2018-08-12 15:30:17', 1, 1, 1);
 
 -- --------------------------------------------------------
 
