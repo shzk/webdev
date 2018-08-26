@@ -49,7 +49,7 @@
             </section>
 
             <section class="add-post">
-              <div class="add-post__title">Email</div>
+              <div class="add-post__title">Город</div>
               <input class="form-full-width" type="text" name="city" value="<?=$currentUser['city']?>"/>
             </section>
 

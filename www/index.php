@@ -1,7 +1,8 @@
 <?php
-
-require "config.php";
-require "db.php";
+// путь до корневой директории на сервере
+define('ROOT', dirname(__FILE__) . '/');
+require ROOT . "config.php";
+require ROOT . "db.php";
 require ROOT . "libs/functions.php";
 session_start();
 if (isset($_SESSION['logged_user'])) {$currentUser = $_SESSION['logged_user'];};
@@ -113,6 +114,18 @@ switch ($uri[0]) {
     
     case 'messages':
         include "modules/contacts/messages.php";
+        break;
+
+    case 'works':
+        include "modules/works/index.php";
+        break;
+    
+    case 'works/work':
+        include "modules/works/single.php";
+        break;
+
+    case 'works/work-new':
+		include "modules/works/work-new.php";
         break;
 
     default:

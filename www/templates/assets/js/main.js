@@ -12,6 +12,9 @@ $(document).ready(function () {
     $('#deleteImgCheckBox')[0].checked = false;
   });
 
-  CKEDITOR.replace('ck');
-
+  var els = document.getElementsByClassName("editor");
+  Array.prototype.forEach.call(els, function (el) {
+    CKEDITOR.replace(el);
+    console.log(el);
+  });
 });

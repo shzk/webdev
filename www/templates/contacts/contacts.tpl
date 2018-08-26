@@ -77,11 +77,13 @@
       </form>
     </div>
   </main>
-  <div class="map-wrapp">
-    <div class="map-conteiner" id="map"></div>
-  </div>
-  <script>
-    const place = { lat:<?=$contacts->lat?>, lng:<?=$contacts->lng?> };
-  </script>
-  <script src="<?=HOST?>templates/assets/js/googleMap.js"></script>
-  <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIr67yxxPmnF-xb4JVokCVGgLbPtuqxiA&callback=initMap"></script>
+  <?php if( $contacts->lat != "" && $contacts->lng != "") {?>
+    <div class="map-wrapp">
+      <div class="map-conteiner" id="map"></div>
+    </div>
+    <script>
+      const place = { lat:<?=$contacts->lat?>, lng:<?=$contacts->lng?> };
+    </script>
+    <script src="<?=HOST?>templates/assets/js/googleMap.js"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIr67yxxPmnF-xb4JVokCVGgLbPtuqxiA&callback=initMap"></script>
+          <?php } ?>

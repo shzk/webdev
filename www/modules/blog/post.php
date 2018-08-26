@@ -20,13 +20,32 @@ $sqlAuthor = '
 $post = R::getAll( $sqlAuthor );
 $post = $post[0];
 $page_title = "Денис Токарев - Блог - {$post['title']}";
-// echo "<pre>";
-// print_r ($post);
-// echo "</pre>";
 
 $sqlComments = 'SELECT comments.text, comments.date_time, comments.user_id, users.name, users.secondname, users.avatar_small FROM comments INNER JOIN users ON comments.user_id = users.id WHERE comments.post_id = ' . $_GET['id'] ;
 $comments = R::getAll( $sqlComments );
 
+$linksSql = 'SELECT posts.id, posts.title FROM posts';
+$link_posts = R::getAll( $linksSql );
+
+foreach ($link_posts as $link_post) {
+	if ($link_post['id'] == $post['id']) {
+		$current_post_id = $link_post['id'];
+	}
+}
+
+for ($i = 0; $i < count($link_posts); $i++) {
+	if ($link_posts[$i]['id'] < $post['id']) {
+		$prev_post_id = $link_posts[$i]['id'];
+		$prev_post_title = $link_posts[$i]['title'];
+	}
+}
+
+for ($i = count($link_posts)-1; $i >= 0; $i--) {
+	if ($link_posts[$i]['id'] > $post['id']) {
+		$next_post_id = $link_posts[$i]['id'];
+		$next_post_title = $link_posts[$i]['title'];
+	}
+}
 
 
 $errors = array();
