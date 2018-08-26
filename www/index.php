@@ -128,6 +128,10 @@ switch ($uri[0]) {
 		include "modules/works/work-new.php";
         break;
 
+    case 'works/work-edit':
+		include "modules/works/work-edit.php";
+        break;
+
     default:
         echo "404 and main page";
         break;

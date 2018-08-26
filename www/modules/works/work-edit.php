@@ -6,11 +6,11 @@ if(!isAdmin()) {
 }
 
 $errors = array();
-
-$work_categories = R::find('work_categories', ' ORDER BY id DESC' );
+$work = R::load('works', $_GET['id']);
+$work_categories = R::findAll('work_categories');
 
 // Если форма отправлена - создаем пост
-if (isset($_POST['workNew'])) {
+if (isset($_POST['workUpdate'])) {
   if (trim($_POST['workTitle']) == '') {
   $errors[] = ['title' => 'Введите название работы'];
   }
@@ -18,7 +18,6 @@ if (isset($_POST['workNew'])) {
   $errors[] = ['title' => 'Введите краткое описание работы'];
   }
   if (empty($errors)) {
-    $work = R::dispense('works');
 		$work->title = htmlentities($_POST['workTitle']);
 		$work->authorId = $currentUser['id'];
 		$work->category = htmlentities($_POST['workCat']);
@@ -30,10 +29,7 @@ if (isset($_POST['workNew'])) {
 		$work->github = htmlentities($_POST['workGithub']);
 		$work->time = htmlentities($_POST['workTime']);
 		$work->pages = htmlentities($_POST['workPages']);
-		$work->price = htmlentities($_POST['workPrice']);
-		
-		
-		
+    $work->price = htmlentities($_POST['workPrice']);
 
     if(isset($_FILES["workImg"]["name"]) && $_FILES["workImg"]["tmp_name"] != '') {
       // Write file image params in variables
@@ -84,16 +80,32 @@ if (isset($_POST['workNew'])) {
 			$img->writeImage($resized_file);
 			$work->workImgSmall = "360-" . $db_file_name;
     }
+    
+    if ( @$_POST['deleteImg'] == "on" ) {
+      $imgPathSmall = ROOT . 'usercontent/work/' . $work->work_img_small;
+      $imgPathBig = ROOT . 'usercontent/work/' . $work->work_img;
+        if ( file_exists($imgPathSmall) ){
+          unlink($imgPathSmall);
+        }
+        if ( file_exists($imgPathBig) ){
+          unlink($imgPathBig);
+        }
+        $work->workImg = "";
+        $work->workImgSmall = "";
+		}
+		
     R::store($work);
-    header('Location: ' . HOST . "works");
+    header('Location: ' . HOST . "works/work-edit?id=".$work->id);
     exit();
   }
 }
 
+
+
 // готовим контент для центральной части
 ob_start();
 include ROOT . "templates/_parts/_header.tpl";
-include ROOT . "templates/works/work-new.tpl";
+include ROOT . "templates/works/work-edit.tpl";
 $content = ob_get_contents();
 ob_end_clean();
 

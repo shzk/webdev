@@ -3375,3 +3375,7 @@
     .form-half:focus {
         outline: none;
     }
+
+    .add-post .add-post__title sup {
+        color: red;
+    }
