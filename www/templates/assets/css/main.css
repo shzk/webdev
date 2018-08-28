@@ -3335,8 +3335,8 @@
         float: left;
     }
 
-    ul.menu,
-    ul.menu li {
+    ul.menu-header,
+    ul.menu-header li {
         height: 30px;
     }
 

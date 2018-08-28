@@ -31,7 +31,7 @@
           </section>
           <section class="add-post">
             <div class="add-post__title">Информация на главной</div>
-            <textarea id="ck" class="form-message" name="userInfo"><?=$about->description?></textarea>
+            <textarea id="ck" class="form-message editor" name="userInfo"><?=$about->description?></textarea>
           </section>
           <section>
             <input type="submit" class="button button-save" value="Обновить" name="aboutEdit">

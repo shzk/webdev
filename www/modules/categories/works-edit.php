@@ -6,15 +6,15 @@ if(!isAdmin()) {
 }
 
 $errors = array();
+$category = R::load('work_categories', @$_GET['id']);
 
-// Если форма отправлена - создаем пост
-if (isset($_POST['catNew'])) {
+// Если форма отправлена - редактируем категорию
+if (isset($_POST['catEdit'])) {
   if (trim($_POST['catTitle']) == '') {
-  $errors[] = ['title' => 'Введите название записи'];
+  $errors[] = ['title' => 'Введите название категории'];
   }
   if (empty($errors)) {
-    $category = R::dispense('categories');
-    $category->cat_title = htmlentities($_POST['catTitle']);
+    $category->w_cat_title = htmlentities($_POST['catTitle']);
     R::store($category);
     header('Location: ' . HOST . "categories");
     exit();
@@ -24,7 +24,7 @@ if (isset($_POST['catNew'])) {
 // готовим контент для центральной части
 ob_start();
 include ROOT . "templates/_parts/_header.tpl";
-include ROOT . "templates/categories/new.tpl";
+include ROOT . "templates/categories/works-edit.tpl";
 $content = ob_get_contents();
 ob_end_clean();
 

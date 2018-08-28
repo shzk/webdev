@@ -102,4 +102,39 @@ function commentNumber ($num) {
 function adopt($text) {
 	return '=?UTF-8?B?'.base64_encode($text).'?=';
 }
+
+//shorten long headings
+function mbCutString($string, $length, $postfix = '...', $encoding = 'UTF-8' ){
+
+	if ( mb_strlen($string, $encoding) <= $length ) {
+		return $string;
+	}
+
+	$temp = mb_substr($string, 0, $length, $encoding);
+	$spacePosition = mb_strripos($temp, " ", 0, $encoding);
+	$result = mb_substr($temp, 0, $spacePosition, $encoding) . "...";
+	return $result;
+
+}
+
+//rusify weeks number
+function weeksNumber ($num) {
+    //Оставляем две последние цифры от $num
+	$number = substr($num, -2);
+    //Если 2 последние цифры входят в диапазон от 11 до 14
+    //Тогда подставляем окончание "ЕВ" 
+	if($number > 10 and $number < 15)
+	{
+		$term = "ь";
+	}
+	else
+	{ 
+		$number = substr($number, -1);
+		if($number == 0) {$term = "ь";}
+		if($number == 1 ) {$term = "я";}
+		if($number > 1 ) {$term = "и";}
+		if($number > 5 ) {$term = "ь";}
+	}
+	echo  $num.' недел'.$term;
+}
 ?>

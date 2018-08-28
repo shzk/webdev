@@ -6,6 +6,7 @@ if(!isAdmin()) {
 }
 
 $categories = R::find('categories', ' ORDER BY id DESC' );
+$work_categories = R::find('work_categories', ' ORDER BY id DESC' );
 
 // готовим контент для центральной части
 ob_start();
@@ -17,5 +18,5 @@ ob_end_clean();
 // выводим шаблоны
 include ROOT . "templates/_parts/_head.tpl";
 include ROOT . "templates/template.tpl";
-include ROOT . "templates/_parts/_scripts.tpl";
 include ROOT . "templates/_parts/_footer.tpl";
+include ROOT . "templates/_parts/_scripts.tpl";

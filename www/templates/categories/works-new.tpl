@@ -3,14 +3,14 @@
       <div class="row">
         <div class="col"></div>
         <div class="col-10">
-          <form action="<?=HOST?>category-edit?id=<?=$category->id?>" method="POST">
-          <h1>Редактировать категорию</h1>
+          <form action="<?=HOST?>category-works-new" method="POST">
+          <h1>Создать категорию</h1>
           <section class="add-post">
             <div class="add-post__title">Название</div>
-            <input class="form-full-width" type="text" name="catTitle" placeholder="Введите название категории" value="<?=$category->cat_title?>" >
+            <input class="form-full-width" type="text" name="catTitle" placeholder="Введите название категории"/>
           </section>
           <section class="add-post">
-            <input type="submit" name="catEdit" class="button button-save" value="Редактировать" >
+            <input type="submit" name="catNew" class="button button-save" value="Добавить" >
             <a class="button button-delete" href="<?=HOST?>categories"> Отмена </a>
           </section>
           </form>

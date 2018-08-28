@@ -10,7 +10,7 @@ $category = R::load('categories', $_GET['id']);
 
 if (isset($_POST['catDelete'])) {
   R::trash($category);
-  header('Location: ' . HOST . "blog/categories");
+  header('Location: ' . HOST . "categories");
   exit();
 }
 
@@ -24,5 +24,5 @@ ob_end_clean();
 // выводим шаблоны
 include ROOT . "templates/_parts/_head.tpl";
 include ROOT . "templates/template.tpl";
-include ROOT . "templates/_parts/_scripts.tpl";
 include ROOT . "templates/_parts/_footer.tpl";
+include ROOT . "templates/_parts/_scripts.tpl";

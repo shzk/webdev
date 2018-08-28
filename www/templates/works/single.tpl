@@ -3,7 +3,10 @@
       <div class="col-lg-9 col-md-8 work-wrap">					
         <div class="work-title"><?=$work['title']?></div>
       </div>
-      <div class="col-lg-2 col-md-3 work-wrap"> <a class="button button-edit" href="<?=HOST?>works/work-edit?id=<?=$work['id']?>"> Редактировать </a>
+      <div class="col-lg-2 col-md-3 work-wrap"> 
+        <?php if(isAdmin()) { ?>
+          <a class="button button-edit" href="<?=HOST?>works/work-edit?id=<?=$work['id']?>"> Редактировать </a>
+        <?php } ?>
       </div>
     </div>
     <div class="row justify-content-md-center">
@@ -13,15 +16,17 @@
           <div class="work-location"> <a href="#"><?=$work['w_cat_title']?></a></div>
           <div class="work-date-download"><?=rus_date("j F Y", strtotime($work['date']))?>		</div>
         </div>
-        <div class="work-project"><img src="<?=HOST?>usercontent/work/<?=$work['work_img']?>"/></div>
+        <div class="work-project">
+          <img src="<?=HOST?>usercontent/work/<?=(@$work['work_img']) ? @$work['work_img'] : 'no_image.png'?>" alt="<?=$work['title']?>"/>
+        </div>
       </div>
     </div>
     <div class="row justify-content-md-center">
       <div class="col-md-5 work-contant">
         <div class="title3">Кратко о проекте</div>
         <p><?=$work['summary']?></p>
-        <div class="title6">Время работы над проектом: <?=$work['time']?> недель</div>
-        <div class="title6">Страниц сверстано: <?=$work['pages']?> страницы</div>
+        <div class="title6">Время работы над проектом: <?=weeksNumber($work['time'])?></div>
+        <div class="title6">Страниц сверстано: <?=$work['pages']?></div>
         <div class="title6">Бюджет проекта: до <?=$work['price']?> рублей</div>
         <div class="title3">Результат</div>
         <p><?=$work['result']?></p>

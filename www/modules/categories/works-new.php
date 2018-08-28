@@ -13,8 +13,11 @@ if (isset($_POST['catNew'])) {
   $errors[] = ['title' => 'Введите название записи'];
   }
   if (empty($errors)) {
-    $category = R::dispense('categories');
-    $category->cat_title = htmlentities($_POST['catTitle']);
+    R::ext('xdispense', function($type){
+      return R::getRedBean()->dispense( $type);
+    }); //это расширение пришлось добавить, т к redbean
+    $category = R::xdispense('work_categories');
+    $category->w_cat_title = htmlentities($_POST['catTitle']);
     R::store($category);
     header('Location: ' . HOST . "categories");
     exit();
@@ -24,7 +27,7 @@ if (isset($_POST['catNew'])) {
 // готовим контент для центральной части
 ob_start();
 include ROOT . "templates/_parts/_header.tpl";
-include ROOT . "templates/categories/new.tpl";
+include ROOT . "templates/categories/works-new.tpl";
 $content = ob_get_contents();
 ob_end_clean();
 

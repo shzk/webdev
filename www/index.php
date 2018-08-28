@@ -70,20 +70,32 @@ switch ($uri[0]) {
 
     /* ---- CATEGORIES ----- */
 
-    case 'blog/categories':
+    case 'categories':
 		include "modules/categories/all.php";
         break;
         
-    case 'blog/category-new':
+    case 'category-new':
 		include "modules/categories/new.php";
         break;
     
-    case 'blog/category-edit':
+    case 'category-works-new':
+		include "modules/categories/works-new.php";
+        break;
+    
+    case 'category-edit':
 		include "modules/categories/edit.php";
         break;
 
-    case 'blog/category-delete':
+    case 'category-works-edit':
+		include "modules/categories/works-edit.php";
+        break;
+
+    case 'category-delete':
 		include "modules/categories/delete.php";
+        break;
+
+    case 'category-works-delete':
+		include "modules/categories/works-delete.php";
         break;
     
     /* --- PAGES --- */
@@ -133,6 +145,6 @@ switch ($uri[0]) {
         break;
 
     default:
-        echo "404 and main page";
+        echo "404 - Nothing found";
         break;
 }

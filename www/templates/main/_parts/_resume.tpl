@@ -7,9 +7,9 @@
   <div class="col-md-8 col-lg-9 resume-content">
     <div class="resume-content--text">
       <h1><?=$about->name?></h1>
-      <p><?=$about->description?></p>
+      <?=$about->description?>
       <h3>Что я умею</h3>
-      <p><?=$about->skills?></p>
+      <?=$about->skills?>
     </div>
     <div class="resume-content--button">
       <a class="button button-regular" href="<?=HOST?>about"> Подробнее </a>

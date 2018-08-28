@@ -27,7 +27,7 @@
               </section>
               <section class="add-post add-work">
                 <div class="add-post__title">Описание работы, должностные обязанности, достигнутые результат</div>
-                <textarea class="form-message" name="description" placeholder="Напишите интересное краткое содержательное описание"></textarea>
+                <textarea class="form-message editor" name="description" placeholder="Напишите интересное краткое содержательное описание"></textarea>
                 <input type="submit" class="button button-save" value="Добавить" name="newWork">
               </section>
             </div>

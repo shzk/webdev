@@ -6,7 +6,7 @@ if(!isAdmin()) {
 }
 
 $errors = array();
-$category = R::load('categories', $_GET['id']);
+$category = R::load('categories', @$_GET['id']);
 
 // Если форма отправлена - редактируем категорию
 if (isset($_POST['catEdit'])) {
@@ -16,7 +16,7 @@ if (isset($_POST['catEdit'])) {
   if (empty($errors)) {
     $category->cat_title = htmlentities($_POST['catTitle']);
     R::store($category);
-    header('Location: ' . HOST . "blog/categories");
+    header('Location: ' . HOST . "categories");
     exit();
   }
 }
@@ -31,5 +31,5 @@ ob_end_clean();
 // выводим шаблоны
 include ROOT . "templates/_parts/_head.tpl";
 include ROOT . "templates/template.tpl";
-include ROOT . "templates/_parts/_scripts.tpl";
 include ROOT . "templates/_parts/_footer.tpl";
+include ROOT . "templates/_parts/_scripts.tpl";

@@ -1,11 +1,23 @@
 <?php
-$page_title = "Денис Токарев - Профиль";
-// $currentUser = $_SESSION['logged_user'];
+
+if(!isAdmin()) {
+  header("Location: ". HOST);
+  die;
+}
+
+$errors = array();
+$category = R::load('work_categories', $_GET['id']);
+
+if (isset($_POST['catDelete'])) {
+  R::trash($category);
+  header('Location: ' . HOST . "categories");
+  exit();
+}
 
 // готовим контент для центральной части
 ob_start();
 include ROOT . "templates/_parts/_header.tpl";
-include ROOT . "templates/profile/profile.tpl";
+include ROOT . "templates/categories/works-delete.tpl";
 $content = ob_get_contents();
 ob_end_clean();
 
