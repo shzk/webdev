@@ -11,9 +11,6 @@ if (isset($_POST['register'])) {
   if (trim($_POST['password']) == '') {
   $errors[] = ['title' => 'Введите пароль'];
   }
-  if (trim($_POST['name']) == '') {
-  $errors[] = ['title' => 'Введите имя'];
-  }
 
   if (R::count('users', 'email = ?', array($_POST['email'])) > 0) {
   $errors[] = ['title' => 'Пользователь с таким email уже зарегистрирован', 'desc' => 'Используйте другой email, или воспользуйтесь восстановлением пароля'];

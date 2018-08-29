@@ -14,6 +14,14 @@
         <?php foreach ($works as $work) {
           include "work-card.tpl";
         }?>
+        <?php if(empty($works)) {
+          echo "Nothing here :(";
+        }?>
       </div>
+      <?php 
+        if(isset($_GET['id'])) { ?>
+          <a href="<?=HOST?>works" class="button">Просмотреть все работы</a>
+        <?php }
+      ?>
     </div>
   </div>

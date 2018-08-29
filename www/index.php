@@ -145,6 +145,6 @@ switch ($uri[0]) {
         break;
 
     default:
-        echo "404 - Nothing found";
+        include "modules/404.php";
         break;
 }

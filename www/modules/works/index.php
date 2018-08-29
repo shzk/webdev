@@ -1,7 +1,7 @@
 <?php
 $page_title = "Денис Токарев - Работы";
-if(isset($_GET['tech_id']) && $_GET['tech_id'] != '') {
-  $works = R::find('works', 'technology = ' . $_GET['tech_id'] . ' ORDER BY id DESC' );
+if(isset($_GET['id']) && $_GET['id'] != '') {
+  $works = R::find('works', 'category = ' . $_GET['id'] . ' ORDER BY id DESC' );
 } else {
   $works = R::find('works', ' ORDER BY id DESC' );
 }

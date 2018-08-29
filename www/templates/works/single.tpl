@@ -13,7 +13,7 @@
       <div class="col-md-10 work-wrap">
         <div class="work-information">
           <div class="work-autor"><?=$work['name']?> <?=$work['secondname']?></div>
-          <div class="work-location"> <a href="#"><?=$work['w_cat_title']?></a></div>
+          <div class="work-location"> <a href="<?=HOST?>works?id=<?=$work['category']?>"><?=$work['w_cat_title']?></a></div>
           <div class="work-date-download"><?=rus_date("j F Y", strtotime($work['date']))?>		</div>
         </div>
         <div class="work-project">

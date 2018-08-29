@@ -14,6 +14,9 @@
       <?php foreach ($posts as $post) {
         include "blog-card.tpl";
       }?>
+      <?php if(empty($posts)) {
+          echo "Nothing here :(";
+        }?>
       </div>
       <?php 
         if(isset($_GET['cat_id'])) { ?>
