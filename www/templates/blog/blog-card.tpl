@@ -6,6 +6,6 @@
       <img class="card__img card-post__img" src="<?=HOST?>usercontent/blog/no_image.png" alt="<?=$post->title?>"/>
     <?php } ?>
     <h2 class="card__title"><?=mbCutString($post->title, 25)?></h2>
-    <a class="button button-regular" href="<?HOST?>blog/post?id=<?=$post->id?>"> Читать </a>
+    <a class="button button-regular" href="<?=HOST?>blog/post?id=<?=$post->id?>"> Читать </a>
   </div>
 </div>

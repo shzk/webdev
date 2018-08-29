@@ -3,7 +3,7 @@
       <div class="row">
         <div class="col">
           <?php if (isAdmin()) { ?>
-            <a class="button button-edit" href="<?HOST?>/blog/post-new"> Добавить пост </a>
+            <a class="button button-edit" href="<?=HOST?>/blog/post-new"> Добавить пост </a>
           <?php } ?>
           <h1>Блог вебразработчика</h1>
         </div>

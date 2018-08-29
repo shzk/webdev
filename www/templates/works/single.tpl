@@ -43,7 +43,7 @@
     <div class="row justify-content-md-center">
       <div class="col-md-10 work-container-button">
       <?php if(@$prev_work_id) { ?>
-        <a class="button button-regular" href="<?HOST?>works/work?id=<?=$prev_work_id?>"> 
+        <a class="button button-regular" href="<?=HOST?>works/work?id=<?=$prev_work_id?>"> 
           <span class="button__small-fa-icon">
             <i class="fas fa-arrow-left"></i>
           </span>
@@ -51,7 +51,7 @@
         </a>
       <?php } ?>
       <?php if(@$next_work_id) { ?>
-        <a class="button button-regular" href="<?HOST?>works/work?id=<?=$next_work_id?>">
+        <a class="button button-regular" href="<?=HOST?>works/work?id=<?=$next_work_id?>">
           <?=$next_work_title?>  
           <span class="button__small-fa-icon">
             <i class="fas fa-arrow-right"></i>

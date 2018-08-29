@@ -20,7 +20,7 @@
           </article>
           <div class="full-post__next-prew">
             <?php if(@$prev_post_id) { ?>
-              <a class="button button-regular" href="<?HOST?>post?id=<?=$prev_post_id?>"> 
+              <a class="button button-regular" href="<?=HOST?>post?id=<?=$prev_post_id?>"> 
                 <span class="button__small-fa-icon">
                   <i class="fas fa-arrow-left"></i>
                 </span>
@@ -28,7 +28,7 @@
               </a>
             <?php } ?>
             <?php if(@$next_post_id) { ?>
-              <a class="button button-regular" href="<?HOST?>post?id=<?=$next_post_id?>">
+              <a class="button button-regular" href="<?=HOST?>post?id=<?=$next_post_id?>">
                 <?=$next_post_title?>  
                 <span class="button__small-fa-icon">
                   <i class="fas fa-arrow-right"></i>
