@@ -22,7 +22,7 @@ $work = $work[0];
 
 $page_title = "Денис Токарев - Работа - {$work['title']}";
 
-$linksSql = 'SELECT posts.id, posts.title FROM posts';
+$linksSql = 'SELECT works.id, works.title FROM works';
 $link_works = R::getAll( $linksSql );
 
 foreach ($link_works as $link_work) {
