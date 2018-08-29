@@ -2,7 +2,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-sm">
-          <p class="footer-copy">© Denis Tokarev<br/>	Создано с <i class="fas fa-heart"> </i> в 2018 году</p>
+          <p class="footer-copy">© Денис Токарев<br/>	Создано с <i class="fas fa-heart"> </i> в 2018 году</p>
         </div>
         <div class="col-md-3 col-sm">
           <ul class="menu">
